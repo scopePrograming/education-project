@@ -1,0 +1,101 @@
+%card {
+    box-shadow: $secShadow;
+    border: none;
+    border-radius: $mainSize / 2;
+    overflow: hidden;
+    margin: 0 0 $mainSize 0;
+    text-align: center;
+    .card-img-top {
+        height: 20rem;
+        border-radius: .5rem .5rem 0 0;
+    }
+    .card-body {
+        margin-top: $mainSize;
+        .card-title {
+            color: $secDeColor;
+            font-weight: $bold;
+            letter-spacing: $mainSize / 16;
+        }
+        .card-text {
+            color: $mainDeColor;
+        }
+    }
+}
+
+// Start latest news
+.latest-news {
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .tab-content {
+        .card {
+            height: 544px;
+            @extend %card;
+            .card-img-top {
+                height: 355px;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+    .nicescroll-box {
+        height: 550px;
+    }
+    .nav-pills {
+        .card {
+            @extend %card;
+            margin-bottom: $mainSize;
+            height: 264px;
+            .card-img-top {
+                height: 177px;
+                img{
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
+                }
+            }
+            .card-body {
+                margin: 0 0 .3rem 0;
+                overflow: hidden;
+                padding: 1rem;
+                .card-title {
+                    color: $secDeColor;
+                    font-weight: $bold;
+                    letter-spacing: 0;
+                }
+                .card-text {
+                    color: $mainDeColor;
+                }
+            }
+        }
+        .nav-link {
+            padding: 0 .5rem;
+            &.active {
+                background: initial;
+                .card {
+                    box-shadow: none;
+                }
+            }
+        }
+        @include mQ(991px) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: .3rem;
+        }
+        @include mQ(507px) {
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+        }
+    }
+    .btn-content {
+        @include flexCenter(row);
+        margin-top: $mainSize;
+        .btn-link {
+            @include btnLink($fourColor, $mainColor)
+        }
+    }
+}

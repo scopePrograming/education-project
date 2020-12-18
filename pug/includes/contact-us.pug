@@ -1,0 +1,47 @@
+// Start contact us 
+section(class = 'contact-us')
+    div.container
+        h2(class = 'sub-title') Contact us
+        div(class = 'row justify-content-center')
+            div(class = 'col-lg-6')
+                form(action = '#' method = 'GET')
+                    div(class= 'form-group inputs')
+                        input(
+                            class= 'form-control form-control-lg'
+                            type = 'text'
+                            placeholder = 'Enter your name'
+                            required ''
+                        )/
+                        input(
+                            class= 'form-control form-control-lg'
+                            type = 'email'
+                            placeholder = 'Enter your email'
+                            required ''
+                        )/
+                        input(
+                            class= 'form-control form-control-lg'
+                            type = 'text'
+                            placeholder = 'Enter your Phone'
+                            required ''
+                        )
+                        input(
+                            class= 'form-control form-control-lg'
+                            type = 'text'
+                            placeholder = 'Enter your subject'
+                            required ''
+                        )/
+                    div(class = 'form-group textarea')
+                        textarea(
+                            class = 'form-control form-control-lg'
+                            rows = '6'
+                            placeholder = 'Enter your message ...'
+                            required
+                        )
+                    button(
+                        class = 'btn-submit'
+                        type = 'submit'    
+                    ) send
+            div(class = 'col-lg-6')
+                div(class = 'box-img')
+                    img(src = './assets/images/pic3.svg' alt='image' '')/
+// End contact us 

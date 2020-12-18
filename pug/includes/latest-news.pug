@@ -1,0 +1,44 @@
+// Start latest news 
+section(class = 'latest-news')
+    div.container-fluid
+        h2(class = 'sub-title') Latest News
+        div(class = 'row justify-content-center')
+            div(class = 'col-lg-7')
+                div(class="tab-content" id="detailsContent")
+                    div(class="tab-pane fade show active" id="v-pills-one" role="tabpanel" aria-labelledby="v-pills-one-tab") 
+                        div(class="card")
+                            div(class="card-img-top")
+                                img(src=`./assets/images/latest-news.jpg` class="" alt="image" '')/
+                            div(class="card-body")
+                                h5(class="card-title mb-0") Some quick example text to build on the card title. one
+                                p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                    - var largeContent = ['two', 'three', 'four', 'five']
+                        each content in largeContent 
+                            div(class="tab-pane fade" id=`v-pills-${content}` role="tabpanel" aria-labelledby=`v-pills-${content}-tab`) 
+                                div(class="card")
+                                    div(class="card-img-top")
+                                        img(src=`./assets/images/latest-news.jpg` class="" alt="image" '')/
+                                    div(class="card-body")
+                                        h5(class="card-title mb-0") Some quick example text to build on the card title. #{content}
+                                        p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+            div(class = 'col-lg-3 col-11 nicescroll-box')
+                div(class="nav flex-column nav-pills wrap" id="detailsContent-tab" role="tablist" aria-orientation="vertical")
+                    a(class="nav-link active" id="v-pills-one-tab" data-toggle="pill" href="#v-pills-one" role="tab" aria-controls="v-pills-one" aria-selected="true")
+                        div(class="card")
+                            div(class="card-img-top")
+                                img(src=`./assets/images/latest-news.jpg` class="" alt="image" '')/
+                            div(class="card-body")
+                                h6(class="card-title mb-0") Some quick example text to build on the card title. one
+                                p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                    - var smallContent = ['two', 'three', 'four', 'five']
+                        each content in smallContent 
+                            a(class="nav-link" id=`v-pills-${content}-tab` data-toggle="pill" href=`#v-pills-${content}` role="tab" aria-controls=`v-pills-${content}` aria-selected="false")
+                                div(class="card")
+                                    div(class="card-img-top")
+                                        img(src=`./assets/images/latest-news.jpg` class="card-img-top" alt="image" '')/
+                                    div(class="card-body")
+                                        h6(class="card-title mb-0") Some quick example text to build on the card title. #{content}
+                                        p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+        div(class = 'btn-content')
+            a(class = 'btn-link' href = '#') View More
+// End latest news 

@@ -1,0 +1,43 @@
+//-Start slider 
+section(class="slider-content" id='slider-header')
+    div.container-fluid
+        div(class = 'row')
+            div(class= 'col-lg-7 py-2')
+                div(id="carouselExampleIndicators" class="carousel slide" data-ride="carousel")
+                    //- content slider
+                    div(class="carousel-inner")
+                        div(class="carousel-item active")
+                            
+                            div(class = 'slide-text')
+                                h1(class = 'title') v #[span(class = 'v') v]elcome to #[br/] #[span(class = 'word') Online] Courses
+                                p(class = 'text') Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, possimus consequuntur fugit error ratione blanditiis laudantium. Hic dignissimos voluptatum repellat ex recusandae provident dolore ad aliquam quibusdam, voluptatem cumque beatae est eligendi eaque delectus sequi assumenda laboriosam voluptatibus vitae. Ratione non ea ut, explicabo necessitatibus possimus consectetur, accusamus maxime odit ipsum sequi voluptatem et veniam dignissimos quia quaerat eaque. Deleniti magni minus ipsam perspiciatis sint, suscipit soluta dolor voluptates laudantium!
+                        - for (var x = 1; x < 5; x ++)
+                            div(class="carousel-item")
+
+                                div(class = 'slide-text')
+                                    h1(class = 'title') v #[span(class = 'v') v]elcome to #[br/] #[span(class = 'word') Online] Courses
+                                    p(class = 'text') Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptate, possimus consequuntur fugit error ratione blanditiis laudantium. Hic dignissimos voluptatum repellat ex recusandae provident dolore ad aliquam quibusdam, voluptatem cumque beatae est eligendi eaque delectus sequi assumenda laboriosam voluptatibus vitae. Ratione non ea ut, explicabo necessitatibus possimus consectetur, accusamus maxime odit ipsum sequi voluptatem et veniam dignissimos quia quaerat eaque. Deleniti magni minus ipsam perspiciatis sint, suscipit soluta dolor voluptates laudantium!
+                    //- indicators
+                    ol(class="carousel-indicators")
+                        li(data-target="#carouselExampleIndicators" data-slide-to="0" class="active")
+                        - for (var x = 1; x < 5; x ++)
+                            li(data-target="#carouselExampleIndicators" data-slide-to=x)
+                    //- btns
+                    div(class='content-btn d-flex align-items-center')
+                        div(class = 'btns')
+                            a(class = 'btn-link' href = '#') View Plans
+                            a(class = 'btn-link' href = '#') Try For Free
+                        div(class="icon-play btnPlay ml-md-5")
+                            i(class="fas fa-play")
+                    //- next and prev
+                    a(class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev")
+                        span(class="carousel-control-prev-icon" aria-hidden="true")
+                        span(class="sr-only") Previous
+                    a(class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next")
+                        span(class="carousel-control-next-icon" aria-hidden="true")
+                        span(class="sr-only") Next
+            div(class= 'col-lg-5 d-flex justify-content-center py-2')
+                //- image
+                div(class = 'slide-img')
+                    img(class = '' src="./assets/images/pic3.svg" class="d-block" alt="" '')/
+//-End slider 

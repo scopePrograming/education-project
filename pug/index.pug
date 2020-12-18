@@ -1,0 +1,70 @@
+//- mixins.pug
+include ./includes/mixins
+doctype html
+html(lang = 'en')
+    //- head.pug
+    include ./includes/head
+        //- styles.pug
+        include ./includes/styles
+        //- From mixins.pug
+        +titlePage('Education')
+    body
+        // start header 
+        header
+            //- navigation.pug
+            include ./includes/navigation
+            //- slider.pug
+            include ./includes/slide-header
+            //- video header
+            section(class='header-video videoPlayer')
+                video(width="100%" loop controls autoplay)
+                    source(src="./assets/media/video-header1.mp4" '')/
+                div(class = 'video-close closePlay')
+                    span(class = 'icon fas fa-times')
+        // End header
+        //- settings
+        include ./includes/settings
+        main
+            //-include ./includes/shuffle
+            // Start enrolled students 
+            +enrolled
+            // Start enrolled students 
+            
+            include ./includes/courses
+
+            //- Start most popular 
+                +sectionsCarousel('Most Popular')
+            //- End most popular 
+
+            //- Start interactive / virtual courses 
+                +sectionsCarousel('Interactive / Virtual Courses')
+            //- End interactive / virtual courses 
+
+            // Start why us
+            +whyUs('Why Us')
+            // End why us
+
+            include ./includes/testimonials
+
+            include ./includes/our-instructors
+
+            // Start faqs 
+            +faqs('FAQs')
+            // End faqs
+            
+            include ./includes/our-message
+
+            include ./includes/latest-news
+
+            include ./includes/video
+
+            include ./includes/mobile-app
+
+            include ./includes/subscribe
+
+            include ./includes/contact-us
+
+        include ./includes/footer
+
+        //-scripts.pug
+        include ./includes/scripts   

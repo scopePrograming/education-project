@@ -1,0 +1,26 @@
+// Global CSS
+body {
+    font-family: $mainFont;
+    overflow-x: hidden;
+    background: $mainBgLinear;
+}
+
+main {
+    
+    overflow-x: hidden;
+}
+
+img {
+    max-width: $w;
+    min-height: $h;
+}
+
+a {
+    &:hover {
+        text-decoration: none !important;
+    }
+
+    &:focus {
+        text-decoration: none !important;
+    }
+}

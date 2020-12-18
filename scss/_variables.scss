@@ -1,0 +1,26 @@
+// variables
+$size: 1rem;
+$mainSize: $size;
+$bold: 700;
+$mainFont : 'Poppins', sans-serif;
+$secFont : 'Bitter', serif;
+$mainRGB: rgba(0, 0, 0, .2);
+$mainDeColor: #6d6d6d;
+$secDeColor: #3a3a3a;
+$mainColor: rgb(235, 76, 110);
+$secColor: #b965e8;
+$thirdColor: #ecd2bca4;
+$fourColor: #fbf6f3;
+$mainBgLinearR: linear-gradient(270deg,  #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e,  #e97d94);
+$secBgLinearR: linear-gradient(270deg, #eb4c6e, #794199, #eb4c6e, #b965e8);
+$mainBgLinearL: linear-gradient(to left, $mainColor, $secColor);
+$secBgLinearL: linear-gradient(to left, $thirdColor, $fourColor);
+$mainBgLinear: linear-gradient(180deg, $thirdColor, $fourColor);
+//$mainBgLinear: linear-gradient(180deg, #00f, #f00, #080);
+$mainShadow: 0 $mainSize / 10 $mainSize / 2 $mainColor;
+$secShadow: 0 ($mainSize / 4) ($mainSize / 4) 0 $mainRGB;
+$trans: all .2s;
+$w: 100%;
+$h: 100%;
+$vW: 100vw;
+$vH: 100vh;

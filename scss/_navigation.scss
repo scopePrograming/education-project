@@ -1,0 +1,100 @@
+%navLink {
+    transition: $trans;
+    font-size: $mainSize + .1;
+    letter-spacing: $mainSize / 10;
+    color: $secDeColor;
+    font-weight: $bold - 200;
+    &:hover {
+        color: $mainColor;
+    }
+}
+
+// nvigation bar
+.navbar {
+    position: fixed;
+    width: 100%;
+    min-height: 5rem;
+    transition: all .5s linear;
+    z-index: 100;
+    &.active {
+        background: rgba(133, 131, 131, .9);
+    }
+    .navbar-brand {
+        width: $mainSize * 4;
+    }
+    .navbar-toggler {
+        outline: none;
+        border: none;
+        .nav-icon {
+            color: $secDeColor;
+            width: 2.5rem;
+            height: 2.5rem;
+            line-height: 2.5rem;
+            font-size: $mainSize + .5;
+            border-radius: 0.3rem;
+            transition: all 0.3s;
+        }
+    }
+    .navbar-collapse {
+        justify-content: flex-end;
+        .navbar-nav {
+            transition: all .5s;
+            .nav-item {
+                &.active {
+                    .nav-link {
+                        color: $mainColor;
+                        font-weight: $bold - 200;
+                    }
+                }
+                .nav-link {
+                    @extend %navLink;
+                    text-transform: capitalize;
+                    margin-left: $mainSize;
+                }
+            }
+            .dropdown {
+                .dropdown-menu {
+                    border: none;
+                    box-shadow: $secShadow;
+                    border-radius: $mainSize / 2;
+                    padding: $mainSize / 4;
+                    .dropdown-item {
+                        @extend %navLink;
+                        font-size: $mainSize;
+                        margin: ($mainSize / 4) 0;
+                        border-bottom: $mainSize / 30 solid $mainRGB;
+                        &:last-child {
+                            border-bottom: none;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.bg-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    @include gradient();
+    @include anime();
+    box-shadow: $secShadow;
+    .navbar-nav {
+        .nav-item {
+            &.active {
+                .nav-link {
+                    color: $fourColor !important;
+                }
+            }
+            &:hover {
+                .nav-link {
+                    color: $fourColor !important;
+                }
+            }
+        }
+    }
+}
+
+

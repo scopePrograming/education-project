@@ -1,0 +1,15 @@
+// Start testimonials 
+section(class = 'testimonials')
+    div.container
+        h2(class = 'sub-title') Testimonials
+        div(class = 'row')
+            - for (var x = 1; x <= 3; x++)
+                div(class = 'col-lg-4 col-md-6 text-center')
+                    div(class = 'box-img')
+                        img(src = './assets/images/latest-news.jpg' alt = 'image' '')/
+                    div(class = 'content-info')
+                        h5(class = 'name') Student Name
+                        p(class = 'text') #[span(class="fas fa-quote-left")] Build a future where people live in harmony with nature. #[span(class="fas fa-quote-right")]
+        div(class = 'btn-content')
+            a(class = 'btn-link' href = '#') View More
+// End testimonials 

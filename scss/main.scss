@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+SC:ital@1&family=Bitter&family=Poppins&display=swap');
+// Global Varaible 
+@import 'variables';
+// Mixins
+@import 'mixin';
+/*Global CSS*/
+@import 'global';
+
+// header
+@import 'header';
+
+/*Start nav bar*/
+@import 'navigation';
+/*End nav bar*/
+
+/*Start slider*/
+@import 'slider';
+/*End slider*/
+
+/*Start setting*/
+@import 'setting';
+/*End setting*/
+
+/*Start courses*/
+/*@import 'shuffle';*/
+/*End courses*/
+
+/*Start enrolled-student*/
+.enrolled-student {
+    @include section();
+    .content {
+        @include flexCenter(column);
+        margin: $mainSize auto;
+        width: 9rem;
+        height: 9rem;
+        border-radius: 50%;
+        background: $mainBgLinearR;
+        box-shadow: $secShadow;
+        .num {
+            display: block;
+            color: $fourColor;
+            font-weight: $bold;
+            font-size: $mainSize + .2;
+            font-family: $mainFont;
+            letter-spacing: 1px;
+        }
+        .disc {
+            @extend .num;
+            font-size: $mainSize - .4;
+        }
+    }
+}
+/*End enrolled-student*/
+/*Start courses*/
+@import 'courses';
+/*End Courses*/
+/*Start most popular*/
+.most-popular {
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .owl-carousel {
+        .card {
+            box-shadow: $secShadow;
+            border: none;
+            border-radius: $mainSize / 2;
+            overflow: hidden;
+            margin: $mainSize 0;
+            .card-img-top {
+                height: 12rem;
+                padding: $mainSize / 16;
+                border-radius: .5rem .5rem 0 0;
+            }
+            .card-body {
+                .card-title {
+                    color: $secDeColor;
+                    font-weight: $bold;
+                    letter-spacing: $mainSize / 16;
+                }
+                .text {
+                    color: $mainColor;
+                }
+                .card-text {
+                    color: $mainDeColor;
+                }
+                .details {
+                    span {
+                        @extend .text;
+                    }
+                }
+                .price {
+                    @extend .text;
+                    font-size: $mainSize + .3;
+                    font-weight: $bold;
+                }
+            }
+        }
+        .owl-nav {
+            width: $w;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            .owl-prev {
+                @extend %owl;
+                left: -3.5rem
+            }
+            .owl-next {
+                @extend %owl;
+                right: -3.5rem;
+            }
+        }
+        .owl-dots {
+            .owl-dot {
+                width: $mainSize;
+                height: $mainSize;
+                background: none;
+                border-radius: 50%;
+                margin: 0 ($mainSize / 2);
+                border: 1px solid $mainColor;
+                box-shadow: $secShadow;
+                &.active {
+                    background: $mainBgLinearR;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+%owl {
+    position: absolute;
+    width: $mainSize + 1;
+    height: $mainSize + 1;
+    line-height: $mainSize + .5;
+    border-radius: 50%;
+    color: $fourColor;
+    box-shadow: $secShadow;
+    font-size: $mainSize + 1;
+    background: $mainColor;
+    transition: $trans;
+    span {
+        outline: none;
+        border: none;
+    }      
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &:hover {
+        box-shadow: none;
+    }    
+}
+/*End most popular*/
+
+/*Start why us*/
+.why-us {
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .content {
+        margin-bottom: $mainSize;
+        .icon {
+            color: $mainColor;
+            font-size: $mainSize * 2;
+        }
+        .card-title {
+            color: $secDeColor;
+            letter-spacing: $mainSize / 16;
+        }
+        .card-text {
+            color: $mainDeColor;
+        }
+    }
+}
+/*End why us*/
+
+/*Start testimonials*/
+@import 'testimonials';
+/*End testimonials*/
+
+/*Start our instructors*/
+@import 'our-instructors';
+/*End our instructors*/
+
+/*Start faqs*/
+.faqs {
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .accordion {
+        .card {
+            border-radius: $mainSize / 3;
+            margin-bottom: $mainSize / 2;
+            box-shadow: $secShadow;
+            border: none;
+            .card-header {
+                background: $mainBgLinearL;
+                color: $fourColor;
+                border-radius: $mainSize / 3;
+                border: none;
+                cursor: pointer;
+                .card-title {
+                    .icon {
+                        font-weight: $bold;
+                    }
+                    .minus {
+                        display: none;
+                    }
+                }
+                &.active {
+                    .card-title {
+                        .minus {
+                            display: block;
+                        }
+                        .plus {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            .card-body {
+                box-shadow: $secShadow;
+                color: $mainDeColor;
+                border: initial;
+            }
+        }
+    }
+}
+/*End faqs*/
+
+/*Start our message*/
+@import 'our-message';
+/*End our message*/
+
+/*Start latest news*/
+@import 'latest-news';
+/*End latest news*/
+
+/*Start video*/
+@import 'video';
+/*End video*/
+
+/*Start mobile app*/
+@import 'mobile-app';
+/*End mobile app*/
+
+/*Start subscribe*/
+@import 'subscribe';
+/*End subscribe*/
+
+/*Start conatct us*/
+@import 'contact-us';
+/*End contact us*/
+
+/*Start footer*/
+@import 'footer';
+/*End footer*/

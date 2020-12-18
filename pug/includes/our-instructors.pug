@@ -1,0 +1,24 @@
+// Start our instructors 
+setion(class = 'our-instructors')
+    div.container
+        h2(class = 'sub-title') Our instructors / Our Projects Consultants
+        div(class = 'owl-carousel py-3')
+            -for(var x = 1; x <= 5; x++)
+                div(class="content-instractor")
+                    div(class = 'box-img')
+                        img(src = './assets/images/latest-news.jpg' class = 'card-img-top' alt = 'image' '')/
+                    div(class="card")
+                        div(class="card-body")
+                            h5(class="card-title mb-0") Instructor Name
+                            span(class = 'text') Category
+                            p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                            div(class = 'details d-flex justify-content-between')
+                                div(class = 'time')
+                                    span(class = 'fas fa-clock') 
+                                    span(class = 'ml-2') 45 mins
+                                div(class = 'file')
+                                    span(class = 'fas fa-file-alt') 
+                                    span(class = 'ml-2') 4 files
+                        div(class = 'btn-content')
+                            a(class = 'btn-link' href = '#') View More
+// End our instructors 

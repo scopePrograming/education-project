@@ -1,0 +1,184 @@
+.all-courses {
+    @include section();
+    text-align: center;
+    .list-courses {
+        padding: 0;
+        margin: $mainSize 0;
+        list-style: none;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            display: inline-flex;
+            margin-left: $mainSize / 2;
+            text-transform: capitalize;
+            cursor: pointer;
+            user-select: none;
+            .nav-link {
+                @include btnLink($fourColor, $mainColor);
+                &.active {
+                    background: $fourColor;
+                    color: $mainColor;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    .sub-title {
+        @include subTilte();
+    }
+    .owl-carousel {
+        
+        .content-course {
+            position: relative;
+            cursor: pointer;
+            &:hover {
+                .more-details {
+                    visibility: visible;
+                    opacity: 1;
+                }
+            }
+            .card {
+                box-shadow: $secShadow;
+                border: none;
+                border-radius: $mainSize / 2;
+                overflow: hidden;
+                margin: 0 0 $mainSize 0;
+                transition: $trans;
+                
+                .card-img-top {
+                    height: 10rem;
+                    padding: $mainSize / 16;
+                    border-radius: .5rem .5rem 0 0;
+                }
+                .card-body {
+                    padding: $mainSize / 2;
+                    .card-title {
+                        color: $secDeColor;
+                        font-weight: $bold;
+                        letter-spacing: $mainSize / 16;
+                    }
+                    .text {
+                        color: $mainColor;
+                    }
+                    .card-text {
+                        color: $mainDeColor;
+                    }
+                    .details {
+                        span {
+                            @extend .text;
+                        }
+                    }
+                    .price {
+                        @extend .text;
+                        font-size: $mainSize + .3;
+                        font-weight: $bold;
+                    }
+                }
+            }
+            .more-details {
+                position: absolute;
+                top: 1rem;
+                left: -1rem;
+                transform: translateX(100%);
+                transform-origin: center;
+                background: #fff;
+                box-shadow: $secShadow;
+                border-radius: .3rem;
+                transition: all .5s ease-in-out;
+                visibility: hidden;
+                opacity: 0;
+                z-index: auto;
+                .info {
+                    .text {
+                       color: $mainColor;
+                    }
+                    .btns {
+                        display: grid;
+                        grid-template-columns: 75% 25%;
+                        gap: .2rem;
+                        place-items: center;
+                        .link-cart {
+                            width: 100%;
+                            padding: .5rem 0;
+                            background: $mainColor;
+                            color: #fff;
+                            border-radius: .3rem;
+                            transition: $trans;
+                            &:hover {
+                                box-shadow: $secShadow;
+                            }
+                        }
+                        .icon {
+                            @extend .link-cart;
+                            border-radius: 50%;
+                            width: 2rem;
+                            height: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            width: $w;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            .owl-prev {
+                @extend %owl;
+                left: -2.5rem;
+            }
+            .owl-next {
+                @extend %owl;
+                right: -2.5rem;
+            }
+        }
+        .owl-dots {
+            .owl-dot {
+                width: $mainSize;
+                height: $mainSize;
+                background: none;
+                border-radius: 50%;
+                margin: 0 ($mainSize / 2);
+                border: 1px solid $mainColor;
+                box-shadow: $secShadow;
+                &.active {
+                    background: $mainBgLinearR;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+    .btn-content {
+        @include flexCenter(row);
+        margin-top: $mainSize;
+        .btn-link {
+            @include btnLink($fourColor, $mainColor)
+        }
+    }
+}
+%owl {
+    position: absolute;
+    width: $mainSize + 1;
+    height: $mainSize + 1;
+    line-height: $mainSize + .5;
+    border-radius: 50%;
+    color: $fourColor;
+    box-shadow: $secShadow;
+    font-size: $mainSize + 1;
+    background: $mainColor;
+    transition: $trans;
+    span {
+        outline: none;
+        border: none;
+    }      
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &:hover {
+        box-shadow: none;
+    }    
+}

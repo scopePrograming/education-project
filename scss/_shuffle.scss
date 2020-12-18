@@ -1,0 +1,71 @@
+//- Courses
+.courses-section {
+    .list-courses {
+        padding: 0;
+        margin: ($mainSize / 2) 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            display: inline-flex;
+            margin: 0 $mainSize / 2;
+            padding: $mainSize / 2 $mainSize;
+            background: $mainBgLinearR;
+            font-size: $mainSize + .2;
+            color: $fourColor;
+            font-weight: $bold;
+            letter-spacing: 1px;
+            border-radius: $mainSize / 5;
+            box-shadow: $secShadow;
+            text-transform: capitalize;
+            cursor: pointer;
+            user-select: none;
+            &.mixitup-control-active {
+                background: $mainBgLinearL;
+                color: $secDeColor;
+                box-shadow: none;
+            }
+        }
+    }
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .card {
+        box-shadow: $secShadow;
+        border: none;
+        border-radius: $mainSize / 2;
+        overflow: hidden;
+        margin: $mainSize 0;
+        text-align: center;
+        .card-img-top {
+            height: 12rem;
+            padding: $mainSize / 16;
+            border-radius: .5rem .5rem 0 0;
+        }
+        .card-body {
+            .card-title {
+                color: $secDeColor;
+                font-weight: $bold;
+                letter-spacing: $mainSize / 16;
+            }
+            .text {
+                color: $mainColor;
+            }
+            .card-text {
+                color: $mainDeColor;
+            }
+            .details {
+                span {
+                    @extend .text;
+                }
+            }
+            .price {
+                @extend .text;
+                font-size: $mainSize + .3;
+                font-weight: $bold;
+            }
+        }
+    }
+}

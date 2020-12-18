@@ -1,0 +1,54 @@
+.settings {
+    position: fixed;
+    right: 0;
+    top: 30%;
+    background: $fourColor;
+    border-radius: 0 0 0 .3rem;
+    z-index: 1500;
+    transform: translateX(100%);
+    transition: all .5s linear;
+    .icon-setting {
+        @include flexCenter(row);
+        position: absolute;
+        right: 100%;
+        top: 0;
+        min-width: $mainSize * 2;
+        min-height: $mainSize * 2;
+        background: $fourColor;
+        border-radius: .3rem 0 0 .3rem;
+        box-shadow: $secShadow;
+        cursor: pointer;
+        .icon {
+            font-size: $mainSize + .7;
+            padding: $mainSize / 4;
+            color: $mainColor;
+            animation: setting 3s infinite linear;
+        }
+    }
+    .content-setting {
+        border-radius: 0 0 0 .3rem;
+        background: $fourColor;
+        padding: $mainSize $mainSize / 2;
+    }
+    /*Show setting*/
+    &.active {
+        transform: translateX(0);
+        box-shadow: $secShadow;
+        .icon-setting {
+            box-shadow: initial;
+            .icon {
+                animation: initial;
+            }
+        }
+    }
+}
+
+@keyframes setting {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

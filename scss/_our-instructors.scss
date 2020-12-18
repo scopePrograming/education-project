@@ -1,0 +1,121 @@
+// our instructors
+.our-instructors {
+    @include section();
+    text-align: center;
+    .sub-title {
+        @include subTilte();
+    }
+    .owl-carousel {
+        .content-instractor {
+            padding-top: 5rem;
+        }
+        .box-img {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+            height: 10rem;
+            width: 10rem;
+            border-radius: 50%;
+            padding: 1rem;
+            z-index: 1500;
+            background: #f7ede5f0;
+            .card-img-top {
+                width: 100%;
+                height: 100%;
+                border-radius: 50%;
+                box-shadow: $secShadow;
+            }
+        }
+        .card {
+            box-shadow: $secShadow;
+            border: none;
+            border-radius: $mainSize / 2;
+            margin: 0 0 $mainSize 0;
+            padding: 4.5rem 0 .5rem;
+            .card-body {
+                .card-title {
+                    color: $secDeColor;
+                    font-weight: $bold;
+                    letter-spacing: $mainSize / 16;
+                }
+                .text {
+                    color: $mainColor;
+                }
+                .card-text {
+                    color: $mainDeColor;
+                }
+                .details {
+                    span {
+                        @extend .text;
+                    }
+                }
+            }
+            .btn-content {
+                @include flexCenter(row);
+                margin: $mainSize / 2 0;
+                .btn-link {
+                    @include btnLink($fourColor, $mainColor);
+                    &:hover {
+                        box-shadow: none;
+                    }
+                }
+            }
+        }
+        .owl-nav {
+            width: $w;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            .owl-prev {
+                @extend %owl;
+                left: -2.5rem;
+            }
+            .owl-next {
+                @extend %owl;
+                right: -2.5rem;
+            }
+        }
+        .owl-dots {
+            .owl-dot {
+                width: $mainSize;
+                height: $mainSize;
+                background: none;
+                border-radius: 50%;
+                margin: 0 ($mainSize / 2);
+                border: 1px solid $mainColor;
+                box-shadow: $secShadow;
+                &.active {
+                    background: $mainBgLinearR;
+                }
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+%owl {
+    //position: absolute;
+    @include flexCenter(row);
+    width: $mainSize + 1;
+    height: $mainSize + 1;
+    border-radius: 50%;
+    color: $fourColor;
+    //box-shadow: $secShadow;
+    font-size: $mainSize + 1;
+    background: $mainColor;
+    transition: $trans;
+    span {
+        outline: none;
+        border: none;
+    }      
+    &:focus {
+        outline: none;
+        border: none;
+    }
+    &:hover {
+        box-shadow: none;
+    }    
+}
+

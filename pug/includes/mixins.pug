@@ -1,0 +1,81 @@
+mixin titlePage(title)
+    title= title
+- var dropMenu = ['En', 'Web', 'Soft', 'Since']
+mixin dropMenu
+    each item in dropMenu
+        |
+        |
+        a(class = 'dropdown-item' href = `./${item.replace(' ', '-').toLowerCase()}.html`)= item  
+- var items = ['contact us', 'about us', 'news', 'blog']
+mixin partNavBar
+    each item in items
+        li(class = 'nav-item')
+            |
+            |
+            a(class = 'nav-link' href = `./${item.replace(' ', '-').toLowerCase()}.html`)= item
+//- Enrolled Students
+mixin enrolled
+    section(class = 'enrolled-student')
+        div.container
+            div(class = 'row text-center')
+                -for (var x = 1; x <= 8; x++)
+                    div(class = 'col-md-3 col-sm-6 text-center')
+                        div(class= 'content')
+                            span(class = 'num') 500k+
+                            span(class = 'disc pt-4') Enrolled Students
+//- Sections carousel
+mixin sectionsCarousel($titleSec)
+    section(class = 'most-popular text-center')
+        div.container
+            h2(class = 'sub-title')=$titleSec
+            div(class = 'owl-carousel py-3')
+                -for(var x = 1; x <= 5; x++)
+                    div
+                        div(class="card")
+                            img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
+                            div(class="card-body")
+                                h5(class="card-title mb-0") Course Name
+                                span(class = 'text') Instructor Name
+                                p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                div(class = 'details d-flex justify-content-between')
+                                    div(class = 'time')
+                                        span(class = 'fas fa-clock') 
+                                        span(class = 'ml-2') 45 mins
+                                    div(class = 'file')
+                                        span(class = 'fas fa-file-alt') 
+                                        span(class = 'ml-2') 4 files
+                                div(class = 'price mt-3') $75.99
+//- Section why us
+mixin whyUs($titleSec)
+    section(class = 'why-us text-center')
+        div.container
+            h2(class = 'sub-title')=$titleSec
+            div(class = 'row text-center')
+                - var icons = ['fas fa-user', 'fas fa-university', 'fas fa-book-reader', 'fas fa-graduation-cap', 'fas fa-laptop-code', 'fas fa-atom']
+                    each icon in icons
+                        div(class = 'col-lg-4 col-md-6')
+                            div(class = 'content')
+                                span(class = `icon ${icon}`)
+                                h5(class = 'card-title my-0') Usabillity
+                                p(class = 'card-text py-2') Some quick example text to build on the card title and make up the bulk of the card's content.
+//- Sction FAQs
+mixin faqs($titleSec)
+    section(class = 'faqs')
+        div.container
+            h2(class = 'sub-title text-center')=$titleSec
+            div(class = 'row')
+                div(class = 'col-lg-6 col-md-12 my-2')
+                    div(class = 'box-img m-auto')
+                        img(src = './assets/images/pic5.svg' alt='image' '')/                        
+                div(class = 'col-lg-6 col-md-12 my-2')
+                    div(class="accordion m-auto" id="accordionExample")
+                        - var numsId = ['One', 'Two', 'Three', 'Four', 'Five', 'Six']
+                            each num in numsId
+                                div(class="card")
+                                    div(class="card-header" id=`heading${num}` data-toggle="collapse" data-target=`#collapse${num}` aria-expanded="true" aria-controls=`collapse${num}`)
+                                        h5(class="card-title m-0 d-flex justify-content-between")
+                                            span(class="text") Collapsible Group Item #{num}
+                                            span(class = 'icon plus') +
+                                            span(class = 'icon minus') -
+                                    div(id=`collapse${num}` class="collapse" aria-labelledby=`heading${num}` data-parent="#accordionExample")
+                                        div(class="card-body") Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod.

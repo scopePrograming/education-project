@@ -1,0 +1,46 @@
+// Start footer 
+footer(class="")
+    //-svg(width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg")
+        defs
+        path(id="wave1" d="")
+        svg(dir="" width="100%" height="100%" version="1.1" xmlns="http://www.w3.org/2000/svg")
+        defs
+        path(id="wave2" d="") 
+    div(class = 'ocean')
+        div(class = 'wave')
+        div(class = 'wave')
+    div.container
+        div(class = 'row')
+            div(class = 'col-lg-5 my-2')
+                h5(class = 'title') About Us
+                p(class = 'text') Some quick example text to build on the card title and make up the bulk of the card's content. Some quick example text to build on the card title and make up the bulk of the card's content.
+            div(class = 'col-lg-3 my-2')
+                nav(class = 'nav-footer')
+                    ul(class = 'nav-item')
+                        li(class = 'nav-list active')
+                            a(class = 'nav-link' href = '#') Home
+                        li(class = 'nav-list')
+                            a(class = 'nav-link' href = '#') Categoray
+                        li(class = 'nav-list')
+                            a(class = 'nav-link' href = '#') Contact Us
+                        li(class = 'nav-list')
+                            a(class = 'nav-link' href = '#') Terms police
+            div(class = 'col-lg-4 my-2')
+                h5(class = 'title') Newslettres
+                p(class = 'text') Subscribe to get updates right in your inbox.
+                form(action = '#' method = 'GET')
+                    div(class= 'form-group')
+                        input(
+                            class= 'form-control form-control-lg'
+                            type = 'email'
+                            placeholder = 'Enter your email'
+                            required ''
+                        )/
+                        span(class = 'fas fa-envelope')
+                        button(class = 'btn-submit fas fa-paper-plane' type = 'submit')
+                div(class = 'social-icon')
+                    - var socilaIcons = {'fa-facebook-square' : 'https://www.facebook.com/', 'fa-twitter-square' : 'https://twitter.com/', 'fa-google-plus-square' : 'https://myaccount.google.com/', 'fa-linkedin' : 'https://www.linkedin.com/'}
+                        each link, icon in socilaIcons
+                            div(class = 'icon')
+                                a(class = `fab ${icon}` href = `${link}`)
+// End footer 

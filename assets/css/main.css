@@ -1,0 +1,1659 @@
+@import url("https://fonts.googleapis.com/css2?family=Alegreya+SC:ital@1&family=Bitter&family=Poppins&display=swap");
+@keyframes animatinLinear {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+/*Global CSS*/
+body {
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+  background: linear-gradient(180deg, #ecd2bca4, #fbf6f3);
+}
+
+main {
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  min-height: 100%;
+}
+
+a:hover {
+  text-decoration: none !important;
+}
+a:focus {
+  text-decoration: none !important;
+}
+
+header {
+  min-height: 100vh;
+  padding-bottom: 3rem;
+  position: relative;
+  overflow-x: hidden;
+}
+header .header-video {
+  width: 100%;
+  position: absolute;
+  display: none;
+  height: calc(100vh - 5rem);
+  margin-top: 4rem;
+}
+header .header-video video {
+  height: 100%;
+}
+header .header-video video:focus {
+  outline: none;
+}
+header .header-video .video-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: #e41212;
+  color: #fff;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+header .header-video .video-close .icon {
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+}
+
+/*Start nav bar*/
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-item, .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  transition: all 0.2s;
+  font-size: 1.1rem;
+  letter-spacing: 0.1rem;
+  color: #3a3a3a;
+  font-weight: 500;
+}
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-item:hover, .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
+  color: #eb4c6e;
+}
+
+.navbar {
+  position: fixed;
+  width: 100%;
+  min-height: 5rem;
+  transition: all 0.5s linear;
+  z-index: 100;
+}
+.navbar.active, .carousel-indicators li.navbar:hover {
+  background: rgba(133, 131, 131, 0.9);
+}
+.navbar .navbar-brand {
+  width: 4rem;
+}
+.navbar .navbar-toggler {
+  outline: none;
+  border: none;
+}
+.navbar .navbar-toggler .nav-icon {
+  color: #3a3a3a;
+  width: 2.5rem;
+  height: 2.5rem;
+  line-height: 2.5rem;
+  font-size: 1.5rem;
+  border-radius: 0.3rem;
+  transition: all 0.3s;
+}
+.navbar .navbar-collapse {
+  justify-content: flex-end;
+}
+.navbar .navbar-collapse .navbar-nav {
+  transition: all 0.5s;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link, .navbar .navbar-collapse .navbar-nav .carousel-indicators li.nav-item:hover .nav-link, .carousel-indicators .navbar .navbar-collapse .navbar-nav li.nav-item:hover .nav-link {
+  color: #eb4c6e;
+  font-weight: 500;
+}
+.navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
+  text-transform: capitalize;
+  margin-left: 1rem;
+}
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu {
+  border: none;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+  padding: 0.25rem;
+}
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-item {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  border-bottom: 0.0333333333rem solid rgba(0, 0, 0, 0.2);
+}
+.navbar .navbar-collapse .navbar-nav .dropdown .dropdown-menu .dropdown-item:last-child {
+  border-bottom: none;
+}
+
+.bg-nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  background-size: 800% 800%;
+  animation: animatinLinear 12s linear infinite;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.bg-nav .navbar-nav .nav-item.active .nav-link, .bg-nav .navbar-nav .carousel-indicators li.nav-item:hover .nav-link, .carousel-indicators .bg-nav .navbar-nav li.nav-item:hover .nav-link {
+  color: #fbf6f3 !important;
+}
+.bg-nav .navbar-nav .nav-item:hover .nav-link {
+  color: #fbf6f3 !important;
+}
+
+/*End nav bar*/
+/*Start slider*/
+.carousel-control-next, .carousel-control-prev {
+  display: flex;
+  position: absolute;
+  margin: auto -2.5rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  background: #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  opacity: 1;
+  transition: all 0.2s;
+}
+.carousel-control-next:hover, .carousel-control-prev:hover {
+  box-shadow: initial;
+}
+
+.slider-content {
+  min-height: calc(100vh - 10rem);
+  display: flex;
+  align-items: center;
+  margin-top: 5rem;
+  position: relative;
+}
+.slider-content .row {
+  align-items: center;
+  margin-right: 3.5rem;
+  margin-left: 3.5rem;
+}
+.slider-content .carousel-item .slide-text .title {
+  text-transform: capitalize;
+  color: #3a3a3a;
+  font-weight: 700;
+  letter-spacing: 0.1428571429rem;
+  font-family: "Bitter", serif;
+}
+.slider-content .carousel-item .slide-text .title::first-letter {
+  font-size: 1.5em;
+}
+.slider-content .carousel-item .slide-text .title .v {
+  margin-left: -2.2rem;
+  font-size: 1.5em;
+}
+.slider-content .carousel-item .slide-text .title .word {
+  color: #eb4c6e;
+}
+.slider-content .carousel-item .slide-text .text, .slider-content .carousel-item .slide-text .our-instructors .owl-carousel .card .card-body .details span, .slider-content .carousel-item .slide-text .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .slider-content .carousel-item .slide-text .our-instructors .owl-carousel .card .card-body .details .btn-submit, .our-instructors .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text span, .our-instructors .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text .btn-submit, .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .price, .most-popular .owl-carousel .card .card-body .slider-content .carousel-item .slide-text .price, .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .details span, .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .details .btn-submit, .most-popular .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text span, .most-popular .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text .btn-submit, .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body .slider-content .carousel-item .slide-text .price, .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .details span, .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details .slider-content .carousel-item .slide-text span, .all-courses .owl-carousel .content-course .card .card-body .details .slider-content .carousel-item .slide-text footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .slider-content .carousel-item .slide-text .btn-submit {
+  text-transform: none;
+  letter-spacing: 0.0625rem;
+  color: #6d6d6d;
+  line-height: 1.7;
+  font-size: 1.2rem;
+  margin: 1.3rem 0;
+}
+.slider-content .content-btn .btns {
+  display: flex;
+}
+.slider-content .content-btn .btns .btn-link {
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  background-size: 800% 800%;
+  background-size: 200% 200%;
+  display: inline-flex;
+  justify-content: center;
+  margin-right: 0.5rem;
+  padding: 0.5rem 0;
+  width: 8rem;
+  border-radius: 1rem;
+  color: #fbf6f3;
+  letter-spacing: 0.0666666667rem;
+  font-weight: 700;
+  border: 0.1428571429rem solid #b965e8;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+.slider-content .content-btn .btns .btn-link:last-child {
+  background: initial;
+  color: #b965e8;
+  border: 0.1428571429rem solid #b965e8;
+}
+.slider-content .content-btn .btns .btn-link:last-child:hover {
+  box-shadow: initial;
+}
+.slider-content .content-btn .btns .btn-link:first-child:hover {
+  animation: animatinLinear 12s linear infinite;
+  border: 0.1428571429rem solid #eb4c6e;
+  box-shadow: initial;
+}
+.slider-content .content-btn .icon-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  background-size: 800% 800%;
+  border-radius: 50%;
+  background-size: 200% 300%;
+  animation: lightnes 2s linear infinite;
+  cursor: pointer;
+  width: 2.7rem;
+  height: 2.7rem;
+}
+@keyframes lightnes {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 98, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 1.5rem rgba(255, 0, 98, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 1.5rem rgba(255, 0, 98, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 0, 98, 0);
+  }
+}
+.slider-content .content-btn .icon-play i {
+  color: #fbf6f3;
+}
+.slider-content .slide-img {
+  width: 35rem;
+}
+.slider-content .slide-img img {
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-control-prev {
+  left: 0;
+}
+
+.carousel-control-next {
+  right: -76%;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  width: 20px;
+  height: 10px;
+}
+
+.carousel-indicators {
+  right: -100%;
+  bottom: -3rem;
+  left: 0;
+}
+.carousel-indicators li {
+  width: 0.8rem !important;
+  height: 0.8rem !important;
+  margin: 0 0.5rem;
+  background: initial;
+  border: 0.0833333333rem solid #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  transition: all 0.2s;
+  opacity: 1;
+}
+.carousel-indicators li.active, .carousel-indicators li:hover {
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94) !important;
+}
+@media screen and (max-width: 991px) {
+  .slider-content .row {
+    flex-direction: column-reverse;
+    text-align: center;
+    justify-content: center;
+  }
+  .slider-content .row .carousel-indicators {
+    right: 0;
+  }
+  .slider-content .row .content-btn {
+    justify-content: center;
+  }
+  .slider-content .row .carousel-control-next {
+    right: 0;
+  }
+}
+@media screen and (max-width: 486px) {
+  .slider-content .carousel-item .slide-text .title {
+    font-size: 1.6rem;
+  }
+  .slider-content .carousel-item .slide-text .title::first-letter {
+    font-size: 1.3em;
+  }
+  .slider-content .carousel-item .slide-text .title .v {
+    margin-left: -1.4rem;
+    font-size: 1.3em;
+  }
+  .slider-content .carousel-item .slide-text .text, .slider-content .carousel-item .slide-text .our-instructors .owl-carousel .card .card-body .details span, .slider-content .carousel-item .slide-text .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .slider-content .carousel-item .slide-text .our-instructors .owl-carousel .card .card-body .details .btn-submit, .our-instructors .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text span, .our-instructors .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text .btn-submit, .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .price, .most-popular .owl-carousel .card .card-body .slider-content .carousel-item .slide-text .price, .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .details span, .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .slider-content .carousel-item .slide-text .most-popular .owl-carousel .card .card-body .details .btn-submit, .most-popular .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text span, .most-popular .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .slider-content .carousel-item .slide-text .btn-submit, .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body .slider-content .carousel-item .slide-text .price, .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .details span, .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .slider-content .carousel-item .slide-text .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details .slider-content .carousel-item .slide-text span, .all-courses .owl-carousel .content-course .card .card-body .details .slider-content .carousel-item .slide-text footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .slider-content .carousel-item .slide-text .btn-submit {
+    font-size: 1rem;
+  }
+  .slider-content .content-btn .btns .btn-link {
+    display: inline-flex;
+    justify-content: center;
+    margin-right: 0.25rem;
+    padding: 0.5rem 0;
+    width: 7rem;
+    letter-spacing: 0;
+    font-weight: 500;
+  }
+  .slider-content .carousel-indicators li {
+    margin: 0 0.2rem;
+  }
+}
+/*End slider*/
+/*Start setting*/
+.settings {
+  position: fixed;
+  right: 0;
+  top: 30%;
+  background: #fbf6f3;
+  border-radius: 0 0 0 0.3rem;
+  z-index: 1500;
+  transform: translateX(100%);
+  transition: all 0.5s linear;
+  /*Show setting*/
+}
+.settings .icon-setting {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  position: absolute;
+  right: 100%;
+  top: 0;
+  min-width: 2rem;
+  min-height: 2rem;
+  background: #fbf6f3;
+  border-radius: 0.3rem 0 0 0.3rem;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.settings .icon-setting .icon {
+  font-size: 1.7rem;
+  padding: 0.25rem;
+  color: #eb4c6e;
+  animation: setting 3s infinite linear;
+}
+.settings .content-setting {
+  border-radius: 0 0 0 0.3rem;
+  background: #fbf6f3;
+  padding: 1rem 0.5rem;
+}
+.settings.active, .carousel-indicators li.settings:hover {
+  transform: translateX(0);
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.settings.active .icon-setting, .carousel-indicators li.settings:hover .icon-setting {
+  box-shadow: initial;
+}
+.settings.active .icon-setting .icon, .carousel-indicators li.settings:hover .icon-setting .icon {
+  animation: initial;
+}
+
+@keyframes setting {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/*End setting*/
+/*Start courses*/
+/*@import 'shuffle';*/
+/*End courses*/
+/*Start enrolled-student*/
+.enrolled-student {
+  padding: 4rem 0;
+}
+.enrolled-student .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 1rem auto;
+  width: 9rem;
+  height: 9rem;
+  border-radius: 50%;
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.enrolled-student .content .num, .enrolled-student .content .disc {
+  display: block;
+  color: #fbf6f3;
+  font-weight: 700;
+  font-size: 1.2rem;
+  font-family: "Poppins", sans-serif;
+  letter-spacing: 1px;
+}
+.enrolled-student .content .disc {
+  font-size: 0.6rem;
+}
+
+/*End enrolled-student*/
+/*Start courses*/
+.all-courses {
+  padding: 4rem 0;
+  text-align: center;
+}
+.all-courses .list-courses {
+  padding: 0;
+  margin: 1rem 0;
+  list-style: none;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+.all-courses .list-courses li {
+  display: inline-flex;
+  margin-left: 0.5rem;
+  text-transform: capitalize;
+  cursor: pointer;
+  user-select: none;
+}
+.all-courses .list-courses li .nav-link {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #fbf6f3;
+  font-weight: 600;
+  background: #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.all-courses .list-courses li .nav-link:hover {
+  color: #eb4c6e;
+  background: #fbf6f3;
+}
+.all-courses .list-courses li .nav-link.active, .all-courses .list-courses li .carousel-indicators li.nav-link:hover, .carousel-indicators .all-courses .list-courses li li.nav-link:hover {
+  background: #fbf6f3;
+  color: #eb4c6e;
+  box-shadow: none;
+}
+.all-courses .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.all-courses .owl-carousel .content-course {
+  position: relative;
+  cursor: pointer;
+}
+.all-courses .owl-carousel .content-course:hover .more-details {
+  visibility: visible;
+  opacity: 1;
+}
+.all-courses .owl-carousel .content-course .card {
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 0 0 1rem 0;
+  transition: all 0.2s;
+}
+.all-courses .owl-carousel .content-course .card .card-img-top {
+  height: 10rem;
+  padding: 0.0625rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.all-courses .owl-carousel .content-course .card .card-body {
+  padding: 0.5rem;
+}
+.all-courses .owl-carousel .content-course .card .card-body .card-title {
+  color: #3a3a3a;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+}
+.all-courses .owl-carousel .content-course .card .card-body .text, .all-courses .most-popular .owl-carousel .content-course .card .card-body .price, .most-popular .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body .details span, .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit {
+  color: #eb4c6e;
+}
+.all-courses .owl-carousel .content-course .card .card-body .card-text {
+  color: #6d6d6d;
+}
+.all-courses .owl-carousel .content-course .card .card-body .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.all-courses .owl-carousel .content-course .more-details {
+  position: absolute;
+  top: 1rem;
+  left: -1rem;
+  transform: translateX(100%);
+  transform-origin: center;
+  background: #fff;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.3rem;
+  transition: all 0.5s ease-in-out;
+  visibility: hidden;
+  opacity: 0;
+  z-index: auto;
+}
+.all-courses .owl-carousel .content-course .more-details .info .text, .all-courses .our-instructors .owl-carousel .card .card-body .details .content-course .more-details .info span, .all-courses .our-instructors .owl-carousel .card .card-body .details .content-course .more-details .info footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .our-instructors .owl-carousel .card .card-body .details .content-course .more-details .info .btn-submit, .our-instructors .all-courses .owl-carousel .card .card-body .details .content-course .more-details .info span, .our-instructors .all-courses .owl-carousel .card .card-body .details .content-course .more-details .info footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .all-courses .owl-carousel .card .card-body .details .content-course .more-details .info .btn-submit, .all-courses .most-popular .owl-carousel .card .card-body .content-course .more-details .info .price, .most-popular .all-courses .owl-carousel .card .card-body .content-course .more-details .info .price, .all-courses .most-popular .owl-carousel .card .card-body .details .content-course .more-details .info span, .all-courses .most-popular .owl-carousel .card .card-body .details .content-course .more-details .info footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .most-popular .owl-carousel .card .card-body .details .content-course .more-details .info .btn-submit, .most-popular .all-courses .owl-carousel .card .card-body .details .content-course .more-details .info span, .most-popular .all-courses .owl-carousel .card .card-body .details .content-course .more-details .info footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .all-courses .owl-carousel .card .card-body .details .content-course .more-details .info .btn-submit, .all-courses .owl-carousel .content-course .more-details .info .card .card-body .details span, .all-courses .owl-carousel .content-course .more-details .info .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .more-details .info .card .card-body .details .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details .more-details .info span, .all-courses .owl-carousel .content-course .card .card-body .details .more-details .info footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .more-details .info .btn-submit, .all-courses .owl-carousel .content-course .more-details .info .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body .more-details .info .price {
+  color: #eb4c6e;
+}
+.all-courses .owl-carousel .content-course .more-details .info .btns {
+  display: grid;
+  grid-template-columns: 75% 25%;
+  gap: 0.2rem;
+  place-items: center;
+}
+.all-courses .owl-carousel .content-course .more-details .info .btns .link-cart, .all-courses .owl-carousel .content-course .more-details .info .btns .icon {
+  width: 100%;
+  padding: 0.5rem 0;
+  background: #eb4c6e;
+  color: #fff;
+  border-radius: 0.3rem;
+  transition: all 0.2s;
+}
+.all-courses .owl-carousel .content-course .more-details .info .btns .link-cart:hover, .all-courses .owl-carousel .content-course .more-details .info .btns .icon:hover {
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.all-courses .owl-carousel .content-course .more-details .info .btns .icon {
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+}
+.all-courses .owl-carousel .owl-nav {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.all-courses .owl-carousel .owl-nav .owl-prev {
+  left: -2.5rem;
+}
+.all-courses .owl-carousel .owl-nav .owl-next {
+  right: -2.5rem;
+}
+.all-courses .owl-carousel .owl-dots .owl-dot {
+  width: 1rem;
+  height: 1rem;
+  background: none;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  border: 1px solid #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.all-courses .owl-carousel .owl-dots .owl-dot.active, .all-courses .owl-carousel .owl-dots .carousel-indicators li.owl-dot:hover, .carousel-indicators .all-courses .owl-carousel .owl-dots li.owl-dot:hover {
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+}
+.all-courses .owl-carousel .owl-dots .owl-dot:focus {
+  outline: none;
+}
+.all-courses .btn-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+.all-courses .btn-content .btn-link {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #fbf6f3;
+  font-weight: 600;
+  background: #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.all-courses .btn-content .btn-link:hover {
+  color: #eb4c6e;
+  background: #fbf6f3;
+}
+
+.our-instructors .owl-carousel .owl-nav .owl-next, .our-instructors .owl-carousel .owl-nav .owl-prev, .most-popular .owl-carousel .owl-nav .owl-next, .most-popular .owl-carousel .owl-nav .owl-prev, .all-courses .owl-carousel .owl-nav .owl-prev, .all-courses .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.5rem;
+  border-radius: 50%;
+  color: #fbf6f3;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  background: #eb4c6e;
+  transition: all 0.2s;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next span, .our-instructors .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .owl-nav .owl-next .btn-submit, .our-instructors .owl-carousel .owl-nav .owl-prev span, .our-instructors .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .owl-nav .owl-prev .btn-submit, .most-popular .owl-carousel .owl-nav .owl-next span, .most-popular .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .owl-nav .owl-next .btn-submit, .most-popular .owl-carousel .owl-nav .owl-prev span, .most-popular .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .owl-nav .owl-prev .btn-submit, .all-courses .owl-carousel .owl-nav .owl-prev span, .all-courses .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .owl-nav .owl-prev .btn-submit, .all-courses .owl-carousel .owl-nav .owl-next span, .all-courses .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .owl-nav .owl-next .btn-submit {
+  outline: none;
+  border: none;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next:focus, .our-instructors .owl-carousel .owl-nav .owl-prev:focus, .most-popular .owl-carousel .owl-nav .owl-next:focus, .most-popular .owl-carousel .owl-nav .owl-prev:focus, .all-courses .owl-carousel .owl-nav .owl-prev:focus, .all-courses .owl-carousel .owl-nav .owl-next:focus {
+  outline: none;
+  border: none;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next:hover, .our-instructors .owl-carousel .owl-nav .owl-prev:hover, .most-popular .owl-carousel .owl-nav .owl-next:hover, .most-popular .owl-carousel .owl-nav .owl-prev:hover, .all-courses .owl-carousel .owl-nav .owl-prev:hover, .all-courses .owl-carousel .owl-nav .owl-next:hover {
+  box-shadow: none;
+}
+
+/*End Courses*/
+/*Start most popular*/
+.most-popular {
+  padding: 4rem 0;
+}
+.most-popular .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.most-popular .owl-carousel .card {
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 1rem 0;
+}
+.most-popular .owl-carousel .card .card-img-top {
+  height: 12rem;
+  padding: 0.0625rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.most-popular .owl-carousel .card .card-body .card-title {
+  color: #3a3a3a;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+}
+.most-popular .owl-carousel .card .card-body .text, .most-popular .owl-carousel .card .card-body .price, .most-popular .owl-carousel .card .card-body .details span, .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .btn-submit, .most-popular .all-courses .owl-carousel .content-course .card .card-body .details span, .all-courses .most-popular .owl-carousel .content-course .card .card-body .details span, .most-popular .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .most-popular .owl-carousel .content-course .card .card-body .price {
+  color: #eb4c6e;
+}
+.most-popular .owl-carousel .card .card-body .card-text {
+  color: #6d6d6d;
+}
+.most-popular .owl-carousel .card .card-body .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.most-popular .owl-carousel .owl-nav {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.most-popular .owl-carousel .owl-nav .owl-prev {
+  left: -3.5rem;
+}
+.most-popular .owl-carousel .owl-nav .owl-next {
+  right: -3.5rem;
+}
+.most-popular .owl-carousel .owl-dots .owl-dot {
+  width: 1rem;
+  height: 1rem;
+  background: none;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  border: 1px solid #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.most-popular .owl-carousel .owl-dots .owl-dot.active, .most-popular .owl-carousel .owl-dots .carousel-indicators li.owl-dot:hover, .carousel-indicators .most-popular .owl-carousel .owl-dots li.owl-dot:hover {
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+}
+.most-popular .owl-carousel .owl-dots .owl-dot:focus {
+  outline: none;
+}
+
+.our-instructors .owl-carousel .owl-nav .owl-next, .our-instructors .owl-carousel .owl-nav .owl-prev, .all-courses .owl-carousel .owl-nav .owl-prev, .all-courses .owl-carousel .owl-nav .owl-next, .most-popular .owl-carousel .owl-nav .owl-prev, .most-popular .owl-carousel .owl-nav .owl-next {
+  position: absolute;
+  width: 2rem;
+  height: 2rem;
+  line-height: 1.5rem;
+  border-radius: 50%;
+  color: #fbf6f3;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  font-size: 2rem;
+  background: #eb4c6e;
+  transition: all 0.2s;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next span, .our-instructors .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .owl-nav .owl-next .btn-submit, .our-instructors .owl-carousel .owl-nav .owl-prev span, .our-instructors .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .owl-nav .owl-prev .btn-submit, .all-courses .owl-carousel .owl-nav .owl-prev span, .all-courses .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .owl-nav .owl-prev .btn-submit, .all-courses .owl-carousel .owl-nav .owl-next span, .all-courses .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .owl-nav .owl-next .btn-submit, .most-popular .owl-carousel .owl-nav .owl-prev span, .most-popular .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .owl-nav .owl-prev .btn-submit, .most-popular .owl-carousel .owl-nav .owl-next span, .most-popular .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .owl-nav .owl-next .btn-submit {
+  outline: none;
+  border: none;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next:focus, .our-instructors .owl-carousel .owl-nav .owl-prev:focus, .all-courses .owl-carousel .owl-nav .owl-prev:focus, .all-courses .owl-carousel .owl-nav .owl-next:focus, .most-popular .owl-carousel .owl-nav .owl-prev:focus, .most-popular .owl-carousel .owl-nav .owl-next:focus {
+  outline: none;
+  border: none;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next:hover, .our-instructors .owl-carousel .owl-nav .owl-prev:hover, .all-courses .owl-carousel .owl-nav .owl-prev:hover, .all-courses .owl-carousel .owl-nav .owl-next:hover, .most-popular .owl-carousel .owl-nav .owl-prev:hover, .most-popular .owl-carousel .owl-nav .owl-next:hover {
+  box-shadow: none;
+}
+
+/*End most popular*/
+/*Start why us*/
+.why-us {
+  padding: 4rem 0;
+}
+.why-us .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.why-us .content {
+  margin-bottom: 1rem;
+}
+.why-us .content .icon {
+  color: #eb4c6e;
+  font-size: 2rem;
+}
+.why-us .content .card-title {
+  color: #3a3a3a;
+  letter-spacing: 0.0625rem;
+}
+.why-us .content .card-text {
+  color: #6d6d6d;
+}
+
+/*End why us*/
+/*Start testimonials*/
+.testimonials {
+  padding: 4rem 0;
+}
+.testimonials .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.testimonials .box-img {
+  margin: 0 auto;
+  height: 7rem;
+  width: 7rem;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+.testimonials .box-img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.testimonials .content-info {
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+}
+.testimonials .content-info .name {
+  color: #eb4c6e;
+}
+.testimonials .content-info .text, .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details span, .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details .btn-submit, .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info span, .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info .btn-submit, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details span, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info span, .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info .btn-submit, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body .testimonials .content-info .price, .testimonials .content-info .most-popular .owl-carousel .card .card-body .details span, .testimonials .content-info .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .most-popular .owl-carousel .card .card-body .details .btn-submit, .most-popular .owl-carousel .card .card-body .details .testimonials .content-info span, .most-popular .owl-carousel .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .testimonials .content-info .btn-submit, .testimonials .content-info .most-popular .owl-carousel .card .card-body .price, .most-popular .owl-carousel .card .card-body .testimonials .content-info .price {
+  color: #3a3a3a;
+  line-height: 1.8;
+  padding: 0.5rem 0;
+}
+.testimonials .content-info .text span, .testimonials .content-info .text footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .text .btn-submit, .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details span span, .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit span, footer .row form .form-group .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details .btn-submit span, .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details span footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details span .btn-submit, .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit .btn-submit, footer .row form .form-group .testimonials .content-info .our-instructors .owl-carousel .card .card-body .details .btn-submit .btn-submit, .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info span span, .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit span, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info .btn-submit span, .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info span footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info span .btn-submit, .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .testimonials .content-info .btn-submit .btn-submit, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details span span, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit span, footer .row form .form-group .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit span, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details span footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details span .btn-submit, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit .btn-submit, footer .row form .form-group .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info span span, .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit span, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info .btn-submit span, .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info span footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info span .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .testimonials .content-info .btn-submit .btn-submit, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .price span, .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .price footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .all-courses .owl-carousel .content-course .card .card-body .price .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .testimonials .content-info .price span, .all-courses .owl-carousel .content-course .card .card-body .testimonials .content-info .price footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .testimonials .content-info .price .btn-submit, .testimonials .content-info .most-popular .owl-carousel .card .card-body .details span span, .testimonials .content-info .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit span, footer .row form .form-group .testimonials .content-info .most-popular .owl-carousel .card .card-body .details .btn-submit span, .testimonials .content-info .most-popular .owl-carousel .card .card-body .details span footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .most-popular .owl-carousel .card .card-body .details span .btn-submit, .testimonials .content-info .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit .btn-submit, footer .row form .form-group .testimonials .content-info .most-popular .owl-carousel .card .card-body .details .btn-submit .btn-submit, .most-popular .owl-carousel .card .card-body .details .testimonials .content-info span span, .most-popular .owl-carousel .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit span, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .testimonials .content-info .btn-submit span, .most-popular .owl-carousel .card .card-body .details .testimonials .content-info span footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .testimonials .content-info span .btn-submit, .most-popular .owl-carousel .card .card-body .details .testimonials .content-info footer .row form .form-group .btn-submit .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .testimonials .content-info .btn-submit .btn-submit, .testimonials .content-info .most-popular .owl-carousel .card .card-body .price span, .testimonials .content-info .most-popular .owl-carousel .card .card-body .price footer .row form .form-group .btn-submit, footer .row form .form-group .testimonials .content-info .most-popular .owl-carousel .card .card-body .price .btn-submit, .most-popular .owl-carousel .card .card-body .testimonials .content-info .price span, .most-popular .owl-carousel .card .card-body .testimonials .content-info .price footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .testimonials .content-info .price .btn-submit {
+  font-size: 0.8rem;
+}
+.testimonials .btn-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+.testimonials .btn-content .btn-link {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #fbf6f3;
+  font-weight: 600;
+  background: #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.testimonials .btn-content .btn-link:hover {
+  color: #eb4c6e;
+  background: #fbf6f3;
+}
+
+/*End testimonials*/
+/*Start our instructors*/
+.our-instructors {
+  padding: 4rem 0;
+  text-align: center;
+}
+.our-instructors .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.our-instructors .owl-carousel .content-instractor {
+  padding-top: 5rem;
+}
+.our-instructors .owl-carousel .box-img {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  height: 10rem;
+  width: 10rem;
+  border-radius: 50%;
+  padding: 1rem;
+  z-index: 1500;
+  background: #f7ede5f0;
+}
+.our-instructors .owl-carousel .box-img .card-img-top {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.our-instructors .owl-carousel .card {
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  margin: 0 0 1rem 0;
+  padding: 4.5rem 0 0.5rem;
+}
+.our-instructors .owl-carousel .card .card-body .card-title {
+  color: #3a3a3a;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+}
+.our-instructors .owl-carousel .card .card-body .text, .our-instructors .owl-carousel .card .card-body .details span, .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .btn-submit, .our-instructors .all-courses .owl-carousel .content-course .card .card-body .details span, .all-courses .our-instructors .owl-carousel .content-course .card .card-body .details span, .our-instructors .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .our-instructors .owl-carousel .content-course .card .card-body .price, .our-instructors .most-popular .owl-carousel .card .card-body .price, .most-popular .our-instructors .owl-carousel .card .card-body .price {
+  color: #eb4c6e;
+}
+.our-instructors .owl-carousel .card .card-body .card-text {
+  color: #6d6d6d;
+}
+.our-instructors .owl-carousel .card .btn-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin: 0.5rem 0;
+}
+.our-instructors .owl-carousel .card .btn-content .btn-link {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #fbf6f3;
+  font-weight: 600;
+  background: #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.our-instructors .owl-carousel .card .btn-content .btn-link:hover {
+  color: #eb4c6e;
+  background: #fbf6f3;
+}
+.our-instructors .owl-carousel .card .btn-content .btn-link:hover {
+  box-shadow: none;
+}
+.our-instructors .owl-carousel .owl-nav {
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.our-instructors .owl-carousel .owl-nav .owl-prev {
+  left: -2.5rem;
+}
+.our-instructors .owl-carousel .owl-nav .owl-next {
+  right: -2.5rem;
+}
+.our-instructors .owl-carousel .owl-dots .owl-dot {
+  width: 1rem;
+  height: 1rem;
+  background: none;
+  border-radius: 50%;
+  margin: 0 0.5rem;
+  border: 1px solid #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.our-instructors .owl-carousel .owl-dots .owl-dot.active, .our-instructors .owl-carousel .owl-dots .carousel-indicators li.owl-dot:hover, .carousel-indicators .our-instructors .owl-carousel .owl-dots li.owl-dot:hover {
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+}
+.our-instructors .owl-carousel .owl-dots .owl-dot:focus {
+  outline: none;
+}
+
+.all-courses .owl-carousel .owl-nav .owl-prev, .all-courses .owl-carousel .owl-nav .owl-next, .most-popular .owl-carousel .owl-nav .owl-prev, .most-popular .owl-carousel .owl-nav .owl-next, .our-instructors .owl-carousel .owl-nav .owl-prev, .our-instructors .owl-carousel .owl-nav .owl-next {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  color: #fbf6f3;
+  font-size: 2rem;
+  background: #eb4c6e;
+  transition: all 0.2s;
+}
+.all-courses .owl-carousel .owl-nav .owl-prev span, .all-courses .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .owl-nav .owl-prev .btn-submit, .all-courses .owl-carousel .owl-nav .owl-next span, .all-courses .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .owl-nav .owl-next .btn-submit, .most-popular .owl-carousel .owl-nav .owl-prev span, .most-popular .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .owl-nav .owl-prev .btn-submit, .most-popular .owl-carousel .owl-nav .owl-next span, .most-popular .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .owl-nav .owl-next .btn-submit, .our-instructors .owl-carousel .owl-nav .owl-prev span, .our-instructors .owl-carousel .owl-nav .owl-prev footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .owl-nav .owl-prev .btn-submit, .our-instructors .owl-carousel .owl-nav .owl-next span, .our-instructors .owl-carousel .owl-nav .owl-next footer .row form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .owl-nav .owl-next .btn-submit {
+  outline: none;
+  border: none;
+}
+.all-courses .owl-carousel .owl-nav .owl-prev:focus, .all-courses .owl-carousel .owl-nav .owl-next:focus, .most-popular .owl-carousel .owl-nav .owl-prev:focus, .most-popular .owl-carousel .owl-nav .owl-next:focus, .our-instructors .owl-carousel .owl-nav .owl-prev:focus, .our-instructors .owl-carousel .owl-nav .owl-next:focus {
+  outline: none;
+  border: none;
+}
+.all-courses .owl-carousel .owl-nav .owl-prev:hover, .all-courses .owl-carousel .owl-nav .owl-next:hover, .most-popular .owl-carousel .owl-nav .owl-prev:hover, .most-popular .owl-carousel .owl-nav .owl-next:hover, .our-instructors .owl-carousel .owl-nav .owl-prev:hover, .our-instructors .owl-carousel .owl-nav .owl-next:hover {
+  box-shadow: none;
+}
+
+/*End our instructors*/
+/*Start faqs*/
+.faqs {
+  padding: 4rem 0;
+}
+.faqs .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.faqs .accordion .card {
+  border-radius: 0.3333333333rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border: none;
+}
+.faqs .accordion .card .card-header {
+  background: linear-gradient(to left, #eb4c6e, #b965e8);
+  color: #fbf6f3;
+  border-radius: 0.3333333333rem;
+  border: none;
+  cursor: pointer;
+}
+.faqs .accordion .card .card-header .card-title .icon {
+  font-weight: 700;
+}
+.faqs .accordion .card .card-header .card-title .minus {
+  display: none;
+}
+.faqs .accordion .card .card-header.active .card-title .minus, .faqs .accordion .card .carousel-indicators li.card-header:hover .card-title .minus, .carousel-indicators .faqs .accordion .card li.card-header:hover .card-title .minus {
+  display: block;
+}
+.faqs .accordion .card .card-header.active .card-title .plus, .faqs .accordion .card .carousel-indicators li.card-header:hover .card-title .plus, .carousel-indicators .faqs .accordion .card li.card-header:hover .card-title .plus {
+  display: none;
+}
+.faqs .accordion .card .card-body {
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  color: #6d6d6d;
+  border: initial;
+}
+
+/*End faqs*/
+/*Start our message*/
+.our-message {
+  padding: 4rem 0;
+}
+.our-message .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.our-message p {
+  text-transform: none;
+  letter-spacing: 0.0625rem;
+  color: #6d6d6d;
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+.our-message .btn-link {
+  color: #eb4c6e;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.our-message .video-card {
+  background: #fff;
+  border-radius: 2.5rem;
+  padding: 1.5rem;
+  position: relative;
+}
+.our-message .video-card .video-img, .our-message .video-card .video-img img {
+  border-radius: 1rem;
+}
+.our-message .video-card .video-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.our-message .video-card .icon-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  background-size: 800% 800%;
+  border-radius: 50%;
+  background-size: 200% 300%;
+  animation: lightnes 2s linear infinite;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #fff;
+}
+@keyframes lightnes {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 98, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 1.5rem rgba(255, 0, 98, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 1.5rem rgba(255, 0, 98, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 0, 98, 0);
+  }
+}
+.our-message .video-card .icon-play i {
+  color: #fbf6f3;
+}
+.our-message .video-card .video-player {
+  width: 100%;
+  position: absolute;
+  display: none;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+.our-message .video-card .video-player video {
+  height: 100%;
+}
+.our-message .video-card .video-player video:focus {
+  outline: none;
+}
+.our-message .video-card .video-player .video-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: #e41212;
+  color: #fff;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.our-message .video-card .video-player .video-close .icon {
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+}
+.our-message .video-card .video-player video {
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/*End our message*/
+/*Start latest news*/
+.latest-news .nav-pills .card, .latest-news .tab-content .card {
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border: none;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  margin: 0 0 1rem 0;
+  text-align: center;
+}
+.latest-news .nav-pills .card .card-img-top, .latest-news .tab-content .card .card-img-top {
+  height: 20rem;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.latest-news .nav-pills .card .card-body, .latest-news .tab-content .card .card-body {
+  margin-top: 1rem;
+}
+.latest-news .nav-pills .card .card-body .card-title, .latest-news .tab-content .card .card-body .card-title {
+  color: #3a3a3a;
+  font-weight: 700;
+  letter-spacing: 0.0625rem;
+}
+.latest-news .nav-pills .card .card-body .card-text, .latest-news .tab-content .card .card-body .card-text {
+  color: #6d6d6d;
+}
+
+.latest-news {
+  padding: 4rem 0;
+}
+.latest-news .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.latest-news .tab-content .card {
+  height: 544px;
+}
+.latest-news .tab-content .card .card-img-top {
+  height: 355px;
+}
+.latest-news .tab-content .card .card-img-top img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.latest-news .nicescroll-box {
+  height: 550px;
+}
+.latest-news .nav-pills .card {
+  margin-bottom: 1rem;
+  height: 264px;
+}
+.latest-news .nav-pills .card .card-img-top {
+  height: 177px;
+}
+.latest-news .nav-pills .card .card-img-top img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+.latest-news .nav-pills .card .card-body {
+  margin: 0 0 0.3rem 0;
+  overflow: hidden;
+  padding: 1rem;
+}
+.latest-news .nav-pills .card .card-body .card-title {
+  color: #3a3a3a;
+  font-weight: 700;
+  letter-spacing: 0;
+}
+.latest-news .nav-pills .card .card-body .card-text {
+  color: #6d6d6d;
+}
+.latest-news .nav-pills .nav-link {
+  padding: 0 0.5rem;
+}
+.latest-news .nav-pills .nav-link.active, .latest-news .nav-pills .carousel-indicators li.nav-link:hover, .carousel-indicators .latest-news .nav-pills li.nav-link:hover {
+  background: initial;
+}
+.latest-news .nav-pills .nav-link.active .card, .latest-news .nav-pills .carousel-indicators li.nav-link:hover .card, .carousel-indicators .latest-news .nav-pills li.nav-link:hover .card {
+  box-shadow: none;
+}
+@media screen and (max-width: 991px) {
+  .latest-news .nav-pills {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.3rem;
+  }
+}
+@media screen and (max-width: 507px) {
+  .latest-news .nav-pills {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.latest-news .btn-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 1rem;
+}
+.latest-news .btn-content .btn-link {
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  color: #fbf6f3;
+  font-weight: 600;
+  background: #eb4c6e;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  transition: all 0.2s;
+}
+.latest-news .btn-content .btn-link:hover {
+  color: #eb4c6e;
+  background: #fbf6f3;
+}
+
+/*End latest news*/
+/*Start video*/
+.video {
+  padding: 4rem 0;
+}
+.video .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.video .video-card {
+  background: #fff;
+  border-radius: 2.5rem;
+  padding: 1.5rem;
+  position: relative;
+}
+.video .video-card .video-img, .video .video-card .video-img img {
+  border-radius: 1rem;
+}
+.video .video-card .video-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.video .video-card .icon-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  background-size: 800% 800%;
+  border-radius: 50%;
+  background-size: 200% 300%;
+  animation: lightnes 2s linear infinite;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 5rem;
+  height: 5rem;
+  border: 2px solid #fff;
+}
+@keyframes lightnes {
+  0% {
+    box-shadow: 0 0 0 0 rgba(255, 0, 98, 0.7);
+  }
+  40% {
+    box-shadow: 0 0 0 1.5rem rgba(255, 0, 98, 0);
+  }
+  80% {
+    box-shadow: 0 0 0 1.5rem rgba(255, 0, 98, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 rgba(255, 0, 98, 0);
+  }
+}
+.video .video-card .icon-play i {
+  color: #fbf6f3;
+}
+.video .video-card .video-player {
+  width: 100%;
+  position: absolute;
+  display: none;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 1.5rem;
+  border-radius: 1rem;
+}
+.video .video-card .video-player video {
+  height: 100%;
+}
+.video .video-card .video-player video:focus {
+  outline: none;
+}
+.video .video-card .video-player .video-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+  background: #e41212;
+  color: #fff;
+  cursor: pointer;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  text-align: center;
+}
+.video .video-card .video-player .video-close .icon {
+  line-height: 2.5rem;
+  font-size: 1.2rem;
+}
+.video .video-card .video-player video {
+  object-fit: cover;
+  border-radius: 1rem;
+}
+
+/*End video*/
+/*Start mobile app*/
+.mobile-app {
+  padding: 4rem 0;
+}
+.mobile-app .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.mobile-app .info-app {
+  display: grid;
+  grid-template-columns: 15% 85%;
+}
+.mobile-app .info-app .info-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  background: linear-gradient(270deg, #7033a1, #b965e8, #eb4c6e, #b965e8, #eb4c6e, #e97d94);
+  background-size: 250% 250%;
+  width: 3rem;
+  height: 3rem;
+  color: #fff;
+  border-radius: 50%;
+}
+.mobile-app .info-app .info-icon i {
+  font-size: 1.3rem;
+}
+.mobile-app .info-app .info-text .title {
+  font-weight: 600;
+  color: #3a3a3a;
+}
+.mobile-app .info-app .info-text p {
+  text-transform: none;
+  letter-spacing: 0.0625rem;
+  color: #6d6d6d;
+  line-height: 1.7;
+  font-size: 1.2rem;
+}
+.mobile-app .download-app {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.mobile-app .download-app .download {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  place-items: center;
+  border-radius: 0.5rem;
+}
+.mobile-app .download-app .download .icon {
+  font-size: 1.5rem;
+}
+
+/*End mobile app*/
+/*Start subscribe*/
+.subscribe {
+  padding: 4rem 0;
+  text-align: center;
+}
+.subscribe .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.subscribe form .form-group {
+  position: relative;
+  width: 100%;
+  height: 4rem;
+}
+.subscribe form .form-group .form-control {
+  width: 100%;
+  height: 100%;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.7rem;
+}
+.subscribe form .form-group .btn-submit {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 1rem;
+  color: #fbf6f3;
+  background: #eb4c6e;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+}
+
+/*End subscribe*/
+/*Start conatct us*/
+.contact-us {
+  padding: 4rem 0;
+  text-align: center;
+}
+.contact-us .sub-title {
+  text-align: center;
+  text-transform: capitalize;
+  color: #eb4c6e;
+  font-weight: 900;
+  font-family: "Bitter", serif;
+  letter-spacing: 0.2rem;
+  margin-bottom: 2rem;
+}
+.contact-us form {
+  margin-bottom: 1rem;
+}
+.contact-us form .inputs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+@media screen and (max-width: 991px) {
+  .contact-us form .inputs {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+.contact-us form .inputs input {
+  width: 100%;
+  height: 3.5rem;
+  background: #ffffff;
+  border: none;
+  outline: none;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.7rem;
+}
+.contact-us form .textarea textarea {
+  background: #ffffff;
+  border: none;
+  outline: none;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  border-radius: 0.7rem;
+  resize: none;
+}
+.contact-us form .btn-submit {
+  color: #fbf6f3;
+  background: #eb4c6e;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.9rem;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+.contact-us .box-img {
+  margin: auto;
+  width: 25rem;
+  margin-bottom: 1rem;
+}
+
+/*End contact us*/
+/*Start footer*/
+footer {
+  overflow: hidden;
+  position: relative;
+  margin-top: 3rem;
+  padding: 2rem 0;
+  color: #fbf6f3;
+  /*svg {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      top: 0;
+  }*/
+}
+footer .ocean {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+footer .ocean .wave {
+  background: url(./../images/wave-footer.svg) repeat-x;
+  position: absolute;
+  bottom: 0;
+  width: 6400px;
+  height: 100%;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+  transform: translate3d(0, 0, 0);
+}
+footer .ocean .wave:nth-of-type(2) {
+  bottom: 0rem;
+  animation: wave 7s cubic-bezier(0.36, 0.45, 0.63, 0.53) -0.125s infinite, swell 7s ease -1.25s infinite;
+  opacity: 0.5;
+}
+@keyframes wave {
+  0% {
+    margin-left: 0;
+  }
+  100% {
+    margin-left: -1600px;
+  }
+}
+@keyframes swell {
+  0%, 100% {
+    transform: translate3d(0, -25px, 0);
+  }
+  50% {
+    transform: translate3d(0, 5px, 0);
+  }
+}
+footer .row {
+  margin-top: 2rem;
+}
+footer .row .title {
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #3a3a3a;
+}
+footer .row .text, footer .row .all-courses .owl-carousel .content-course .card .card-body .details span, footer .row .all-courses .owl-carousel .content-course .card .card-body .details form .form-group .btn-submit, footer .row form .form-group .all-courses .owl-carousel .content-course .card .card-body .details .btn-submit, .all-courses .owl-carousel .content-course .card .card-body .details footer .row span, .all-courses .owl-carousel .content-course .card .card-body .details footer .row form .form-group .btn-submit, footer .row .all-courses .owl-carousel .content-course .card .card-body .price, .all-courses .owl-carousel .content-course .card .card-body footer .row .price, footer .row .most-popular .owl-carousel .card .card-body .details span, footer .row .most-popular .owl-carousel .card .card-body .details form .form-group .btn-submit, footer .row form .form-group .most-popular .owl-carousel .card .card-body .details .btn-submit, .most-popular .owl-carousel .card .card-body .details footer .row span, .most-popular .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit, footer .row .most-popular .owl-carousel .card .card-body .price, .most-popular .owl-carousel .card .card-body footer .row .price, footer .row .our-instructors .owl-carousel .card .card-body .details span, footer .row .our-instructors .owl-carousel .card .card-body .details form .form-group .btn-submit, footer .row form .form-group .our-instructors .owl-carousel .card .card-body .details .btn-submit, .our-instructors .owl-carousel .card .card-body .details footer .row span, .our-instructors .owl-carousel .card .card-body .details footer .row form .form-group .btn-submit {
+  line-height: 1.7;
+}
+footer .row .nav-footer .nav-item {
+  display: inline-flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+footer .row .nav-footer .nav-item .nav-list {
+  margin-bottom: 0.5rem;
+}
+footer .row .nav-footer .nav-item .nav-list .nav-link {
+  color: #fbf6f3;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+footer .row .nav-footer .nav-item .nav-list.active .nav-link, footer .row .nav-footer .nav-item .carousel-indicators li.nav-list:hover .nav-link, .carousel-indicators footer .row .nav-footer .nav-item li.nav-list:hover .nav-link {
+  color: #3a3a3a;
+}
+footer .row .nav-footer .nav-item .nav-list:hover .nav-link {
+  color: #3a3a3a;
+}
+footer .row form .form-group {
+  position: relative;
+  width: 100%;
+  height: 3.5rem;
+  box-shadow: #3a3a3a;
+}
+footer .row form .form-group .form-control {
+  width: 100%;
+  height: 100%;
+  background: #fbf6f3;
+  border: none;
+  outline: none;
+  padding-left: 1.9rem;
+  padding-right: 1.7rem;
+}
+footer .row form .form-group .form-control:focus {
+  box-shadow: none;
+}
+footer .row form .form-group span, footer .row form .form-group .btn-submit {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0.3rem;
+  font-size: 1.3rem;
+  color: #6d6d6d;
+}
+footer .row form .form-group .btn-submit {
+  right: 0.3rem;
+  left: initial;
+  border: none;
+  outline: none;
+  background: none;
+}
+footer .row .social-icon {
+  display: flex;
+}
+footer .row .social-icon .icon {
+  background: #fbf6f3;
+  margin: 0 0.5rem;
+  border-radius: 0.2rem;
+  transition: all 0.2s;
+  box-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+}
+footer .row .social-icon .icon a {
+  font-size: 2.2rem;
+  color: #3a3a3a;
+  padding: 0.1rem 0.2rem;
+  text-shadow: 0 0.25rem 0.25rem 0 rgba(0, 0, 0, 0.2);
+  transition: all 0.2s;
+}
+footer .row .social-icon .icon:hover {
+  background: #3a3a3a;
+}
+footer .row .social-icon .icon:hover a {
+  color: #fbf6f3;
+}
+
+/*End footer*/
+
+/*# sourceMappingURL=main.css.map */

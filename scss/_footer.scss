@@ -1,0 +1,162 @@
+// Footer
+footer {
+    overflow: hidden;
+    //min-height: 100%;
+    position: relative;
+    //padding: $mainSize * 5 0;
+    margin-top: 3rem;
+    padding: 2rem 0;
+    color: $fourColor;
+    .ocean { 
+        height: 100%;
+        width:100%;
+        position:absolute;
+        bottom:0;
+        left:0;
+        //background: #e7008a;
+        .wave {
+            background: url(./../images/wave-footer.svg) repeat-x;
+            //background-size: cover;
+            //background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/85486/wave.svg) repeat-x; 
+            position: absolute;
+            bottom: 0;
+            //top: -198px;
+            width: 6400px;
+            height: 100%;
+            //height: 198px;
+            animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) infinite;
+            transform: translate3d(0, 0, 0);
+        }
+          
+        .wave:nth-of-type(2) {
+            //top: -175px;
+            bottom: 0rem;
+            animation: wave 7s cubic-bezier( 0.36, 0.45, 0.63, 0.53) -.125s infinite, swell 7s ease -1.25s infinite;
+            opacity: .5;
+        }
+          
+        @keyframes wave {
+            0% {
+                margin-left: 0;
+            }
+            100% {
+                margin-left: -1600px;
+            }
+        }
+          
+        @keyframes swell {
+            0%, 100% {
+                transform: translate3d(0,-25px,0);
+            }
+            50% {
+                transform: translate3d(0,5px,0);
+            }
+        }
+    }
+      
+      
+    /*svg {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        top: 0;
+    }*/
+    .row {
+        margin-top: $mainSize * 2;
+        .title {
+            font-weight: $bold - 100;
+            letter-spacing: 1px;
+            color: $secDeColor;
+        }
+        .text {
+            line-height: 1.7;
+        }
+        .nav-footer {
+            .nav-item {
+                display: inline-flex;
+                flex-direction: column;
+                padding: 0;
+                margin: 0;
+                list-style: none;
+                .nav-list {
+                    margin-bottom: $mainSize / 2;
+                    .nav-link {
+                        color: $fourColor;
+                        font-weight: $bold - 100;
+                        letter-spacing: 1px;
+                    }
+                    &.active {
+                        .nav-link {
+                            color: $secDeColor;
+                        }
+                    }
+                    &:hover {
+                        .nav-link {
+                            color: $secDeColor;
+                        }
+                    }
+                }
+            }
+        }
+        form {
+            .form-group {
+                position: relative;
+                width: 100%;
+                height: 3.5rem;
+                box-shadow: $secDeColor;
+                .form-control {
+                    width: 100%;
+                    height: 100%;
+                    background: $fourColor;
+                    border: none;
+                    outline: none;
+                    padding-left: $mainSize + .9;
+                    padding-right: $mainSize + .7;
+                    &:focus {
+                        box-shadow: none;
+                    } 
+                }
+                span {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    left: .3rem;
+                    font-size: $mainSize + .3;
+                    color: $mainDeColor;
+                }
+                .btn-submit {
+                    @extend span;
+                    right: .3rem;
+                    left: initial;
+                    border: none;
+                    outline: none;
+                    background: none;
+                }
+            }
+        }
+        .social-icon {
+            display: flex;
+            .icon {
+                background: $fourColor;
+                margin: 0 .5rem;
+                border-radius: .2rem;
+                transition: $trans;
+                box-shadow: $secShadow;
+                a {
+                    font-size: $mainSize + 1.2;
+                    color: $secDeColor;
+                    padding: .1rem .2rem;
+                    text-shadow: $secShadow;
+                    transition: $trans;
+                }
+                &:hover {
+                    background: $secDeColor;
+                    a {
+                        color: $fourColor;
+                    }
+                }
+            }
+        }
+    }
+}

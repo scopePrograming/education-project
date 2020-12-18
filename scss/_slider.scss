@@ -1,0 +1,201 @@
+// Extended 
+%controlSlide {
+    display: flex;
+    position: absolute;
+    margin: auto -2.5rem;
+    height: $mainSize * 2;
+    width: $mainSize * 2;
+    border-radius: 50%;
+    background: $mainColor;
+    box-shadow: $secShadow;
+    opacity: 1;
+    transition: $trans;
+    &:hover {
+        box-shadow: initial;
+    }
+}
+// Slider header
+.slider-content {
+    min-height: calc(100vh - 10rem);
+    display: flex;
+    align-items: center;
+    margin-top: 5rem;
+    position: relative;
+    .row {
+        align-items: center;
+        margin-right: 3.5rem;
+        margin-left: 3.5rem;
+    }
+    .carousel-item {
+        .slide-text {
+            .title {
+                @include globalTitel(capitalize, $secDeColor, $bold, $mainSize / 7);
+                font-family: $secFont;
+                &::first-letter {
+                    font-size: 1.5em;
+                }
+                .v {
+                    margin-left: - $mainSize - 1.2;
+                    font-size: 1.5em;
+                }
+                .word {
+                    color: $mainColor;
+                }
+            }
+            .text {
+                @include globalText($mainDeColor, none);
+                margin: 1.3rem 0;
+            }
+        }
+    }
+    .content-btn {
+        .btns {
+            display: flex;
+            .btn-link {
+                @include gradient();
+                background-size: 200% 200%;
+                display: inline-flex;
+                justify-content: center;
+                margin-right: $mainSize / 2;
+                padding: $mainSize / 2 0;
+                width: 8rem;
+                border-radius: $mainSize;
+                color: $fourColor;
+                letter-spacing: $mainSize / 15;
+                font-weight: $bold;
+                
+                border: $mainSize / 7 solid $secColor;
+                box-shadow: $secShadow;
+                transition: $trans;
+                &:last-child {
+                    background: initial;
+                    color: $secColor;
+                    border: $mainSize / 7 solid $secColor;
+                    &:hover {
+                        box-shadow: initial;
+                    }
+                }
+                &:first-child:hover {
+                    @include anime();
+                    border: $mainSize / 7 solid $mainColor;
+                    box-shadow: initial;
+                }
+            }
+        }
+        .icon-play {
+            @include flexCenter(row);
+            @include gradient();
+            @include videoPlay();
+            width: 2.7rem;
+            height: 2.7rem;
+        }
+    }
+    
+    .slide-img {
+        width: 35rem;
+        img {
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+
+.carousel-control-prev {
+    @extend %controlSlide;
+    left: 0;
+}
+
+.carousel-control-next {
+    @extend %controlSlide;
+    right: -76%;
+}
+
+.carousel-control-next-icon {
+    width: 20px;
+    height: 10px;
+}
+
+.carousel-control-prev-icon {
+    @extend .carousel-control-next-icon
+}
+
+.carousel-indicators {
+    right: -100%;
+    bottom: -3rem;
+    left: 0;
+    
+    li {
+        width: $mainSize - .2 !important;
+        height: $mainSize - .2 !important;
+        margin: 0 $mainSize / 2;
+        background: initial;
+        border: $mainSize / 12 solid $mainColor;
+        box-shadow: $secShadow;
+        border-radius: 50%;
+        transition: $trans;
+        opacity: 1;
+        &.active {
+            background: $mainBgLinearR !important;
+        }
+        &:hover {
+            @extend .active;
+        }
+    }
+}
+
+@include mQ(991px) {
+    .slider-content {
+        .row {
+            flex-direction: column-reverse;
+            text-align: center;
+            justify-content: center;
+            .carousel-indicators {
+                right: 0;
+            }
+            .content-btn {
+                justify-content: center;
+            }
+            .carousel-control-next {
+                right: 0;
+            }            
+        }
+    }
+}
+
+@include mQ(486px) {
+    .slider-content {
+        .carousel-item {
+            .slide-text {
+                .title {
+                    font-size: 1.6rem;
+                    &::first-letter {
+                        font-size: 1.3em;
+                    }
+                    .v {
+                        margin-left: - $mainSize - .4;
+                        font-size: 1.3em;
+                    }
+                }
+                .text {
+                    font-size: 1rem;
+                }
+            }
+        }
+        .content-btn {
+            .btns {
+                .btn-link {
+                    display: inline-flex;
+                    justify-content: center;
+                    margin-right: $mainSize / 4;
+                    padding: $mainSize / 2 0;
+                    width: 7rem;
+                    letter-spacing: 0;
+                    font-weight: 500;
+                }
+            }
+        }
+        .carousel-indicators li{
+            margin: 0 0.2rem;
+        }
+    }
+}

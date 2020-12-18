@@ -1,0 +1,46 @@
+//- Start mobile app
+.mobile-app {
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .info-app {
+        display: grid;
+        grid-template-columns: 15% 85%;
+        .info-icon {
+            @include flexCenter(row);
+            background: $mainBgLinearR;
+            background-size: 250% 250%;
+            width: 3rem;
+            height: 3rem;
+            color: #fff;
+            border-radius: 50%;
+            i {
+                font-size: 1.3rem;
+            }
+        }
+        .info-text {
+            .title {
+                font-weight: 600;
+                color: $secDeColor;
+            }
+            p {
+                @include globalText($mainDeColor, none);
+            }
+        }
+    }
+    .download-app {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        .download {
+            display: grid;
+            grid-template-columns: 1fr 3fr;
+            place-items: center;
+            border-radius: .5rem;
+            .icon {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}

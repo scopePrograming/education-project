@@ -1,0 +1,48 @@
+//- Start video
+.video {
+    @include section();
+    .sub-title {
+        @include subTilte();
+    }
+    .video-card {
+        background: #fff;
+        border-radius: 2.5rem;
+        padding: 1.5rem;
+        position: relative;
+        .video-img{
+            border-radius: 1rem;
+            img{
+                @extend .video-img;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+        .icon-play {
+            @include flexCenter(row);
+            @include gradient();
+            @include videoPlay();
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 5rem;
+            height: 5rem;
+            border: 2px solid #fff;
+        }
+        .video-player{
+            @include video();
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            padding: 1.5rem;
+            border-radius: 1rem;
+            video {
+                object-fit: cover;
+                border-radius: 1rem;
+            }
+        }
+    }
+    
+}
