@@ -1,0 +1,194 @@
+.slide-courses {
+    @include section();
+    text-align: center;
+    position: relative;
+    
+    .list-courses {
+        padding: 0;
+        margin: $mainSize 0;
+        list-style: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        li {
+            display: inline-block;
+            margin: {
+                left: .5rem;
+                bottom: .5rem;
+            }
+            text-transform: capitalize;
+            cursor: pointer;
+            user-select: none;
+            .nav-link {
+                @include btnLink($fourColor, $mainColor);
+                @include mQ(424px) {
+                    font-size: .9rem;
+                    padding: .7rem .5rem;
+                }
+                &.active {
+                    background: $fourColor;
+                    color: $mainColor;
+                    box-shadow: none;
+                }
+            }
+        }
+    }
+    .sub-title {
+        @include subTilte();
+    }
+    .__carousel {
+        position: relative;
+        //min-height: 450px;
+        .carousel__button{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: $mainColor;
+            color: #fff;
+            width: 2.5rem;
+            height: 2.5rem;
+            border-radius: 50%;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            &--left{
+                display: none;
+                left: -3rem;
+            }
+            &--right{
+                right: -3rem;
+            }
+            i {
+                display: block;
+                margin: auto;
+                font-size: 1.1rem;
+            }
+        }
+        .carousel__track--container {
+            position: relative;
+            overflow: hidden;
+            //height: 450px;
+            .carousel__track {
+                
+                //overflow: auto;
+                //margin: 0 auto;
+                //overflow: hidden;
+                display: grid;
+                grid-auto-columns: calc((100% - (4 - 1) * 1rem) / 4);
+                //place-items: center;
+                //grid-auto-columns: max-content;
+                grid-auto-flow: column;
+                gap: 1rem;
+                position: relative;
+                //height: 100%;
+                @include mQ(991px){
+                    grid-auto-columns: calc((100% - (2 - 1) * 1rem) / 2);
+                }
+                @include mQ(767px){
+                    grid-auto-columns: calc((100% - (1 - 1) * 1rem) / 1);
+                }
+                .carousel__slide{
+                    position: relative;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        .more-details {
+                            visibility: visible;
+                            opacity: 1;
+                        }
+                    }
+                    .card {
+                        box-shadow: $secShadow;
+                        border: none;
+                        border-radius: $mainSize / 2;
+                        overflow: hidden;
+                        margin: 0 auto $mainSize;
+                        transition: $trans;
+                        &-img-top {
+                            height: 10rem;
+                            padding: $mainSize / 16;
+                            border-radius: .5rem .5rem 0 0;
+                        }
+                        &-body {
+                            padding: $mainSize / 2;
+                            .card-title {
+                                color: $secDeColor;
+                                font-weight: $bold;
+                                letter-spacing: $mainSize / 16;
+                            }
+                            .text {
+                                color: $mainColor;
+                            }
+                            .card-text {
+                                color: $mainDeColor;
+                            }
+                            .details {
+                                span {
+                                    @extend .text;
+                                }
+                            }
+                            .price {
+                                @extend .text;
+                                font-size: $mainSize + .3;
+                                font-weight: $bold;
+                            }
+                        }
+                    }
+                    .more-details {
+                        position: absolute;
+                        top: 1rem;
+                        //right: -0.5rem;
+                        //transform: translateX(100%);
+                        //left: -0.5rem;
+                        //transform: translateX(-100%);
+                        transform-origin: center;
+                        background: #fff;
+                        box-shadow: $secShadow;
+                        border-radius: .3rem;
+                        transition: all .5s ease-in-out;
+                        visibility: hidden;
+                        opacity: 0;
+                        z-index: 1500;
+                        .info {
+                            .text {
+                            color: $mainColor;
+                            }
+                            .btns {
+                                display: grid;
+                                grid-template-columns: 75% 25%;
+                                gap: .2rem;
+                                place-items: center;
+                                .link-cart {
+                                    width: 100%;
+                                    padding: .5rem 0;
+                                    background: $mainColor;
+                                    color: #fff;
+                                    border-radius: .3rem;
+                                    transition: $trans;
+                                    &:hover {
+                                        box-shadow: $secShadow;
+                                    }
+                                }
+                                .icon {
+                                    @extend .link-cart;
+                                    border-radius: 50%;
+                                    width: 2rem;
+                                    height: 2rem;
+                                }
+                            }
+                        }
+                    }
+                        
+                    
+                }
+            }  
+        }
+    }
+    .btn-content {
+        @include flexCenter(row);
+        margin-top: $mainSize;
+        .btn-link {
+            @include btnLink($fourColor, $mainColor)
+        }
+    }
+}

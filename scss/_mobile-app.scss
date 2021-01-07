@@ -5,8 +5,19 @@
         @include subTilte();
     }
     .info-app {
+        position: relative;
         display: grid;
         grid-template-columns: 15% 85%;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 1.5rem;
+            width: 3px;
+            height: 100%;
+            background:rgba($mainDeColor,0.3);
+            z-index: -1;
+        }
         .info-icon {
             @include flexCenter(row);
             background: $mainBgLinearR;
@@ -27,6 +38,9 @@
             p {
                 @include globalText($mainDeColor, none);
             }
+            @include mQ (424px) {
+                padding-left: 0.6rem;
+            }
         }
     }
     .download-app {
@@ -37,10 +51,30 @@
             display: grid;
             grid-template-columns: 1fr 3fr;
             place-items: center;
-            border-radius: .5rem;
+            border-radius: 0.7rem;
+            padding: 0.6rem 1.2rem;
+            cursor: pointer;
             .icon {
                 font-size: 1.5rem;
             }
+            .btn-text{
+                font-weight: 600;
+                line-height: 1;
+                @include mQ (424px) {
+                    font-size: 0.7rem;
+                }
+            }
+        }
+        .android{
+            background: $mainBgLinearR;
+            background-size: 250% 250%;
+            color: #fff;
+        }
+        .ios{
+            background: $mainBgLinearR;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            box-shadow: 0 0.1rem 0.1rem 0.1rem rgba(0,0,0,0.3);
         }
     }
 }

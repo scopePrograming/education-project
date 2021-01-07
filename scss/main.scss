@@ -26,8 +26,8 @@
 /*End courses*/
 
 /*Start enrolled-student*/
-.enrolled-student {
-    @include section();
+/*.enrolled-student {
+//    @include section();
     .content {
         @include flexCenter(column);
         margin: $mainSize auto;
@@ -49,8 +49,17 @@
             font-size: $mainSize - .4;
         }
     }
-}
+}*/
 /*End enrolled-student*/
+
+/*Start enrolled*/
+@import 'enrolled';
+/*End enrolled*/
+
+/*start slide-course*/
+@import 'slide-course';
+/*start slide-course*/
+
 /*Start courses*/
 @import 'courses';
 /*End Courses*/

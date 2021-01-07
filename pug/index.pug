@@ -26,11 +26,15 @@ html(lang = 'en')
         include ./includes/settings
         main
             //-include ./includes/shuffle
-            // Start enrolled students 
-            +enrolled
-            // Start enrolled students 
+            //- Start enrolled students 
+            //-+enrolled
+            //- Start enrolled students 
+
+            include ./includes/enrolled
+
+            include ./includes/slide-course
             
-            include ./includes/courses
+            //-include ./includes/courses
 
             //- Start most popular 
                 +sectionsCarousel('Most Popular')

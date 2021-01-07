@@ -1,17 +1,75 @@
 // Start courses 
 section(class = 'all-courses')
     div.container
-        ul(class = 'list-courses nav nav-pills' id="pills-tab" role="tablist")
+
+        //ul(class = 'list-courses nav nav-pills' id="pills-tab" role="tablist")
             li(class="nav-item" role="presentation")
                 a(class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true") Courses
             li(class="nav-item" role="presentation")
                 a(class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false") Popular
             li(class="nav-item" role="presentation")
                 a(class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false") Interactive
-        div(class="tab-content" id="pills-tabContent")
+        
+        //div(class="tab-content" id="pills-tabContent")
             div(class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab")
                 h2(class = 'sub-title') Courses
-                div(class = 'owl-carousel py-3')
+                div(class="row mx-auto my-auto")
+                    div(id="myCarousel" class="carousel slide w-100" data-ride="carousel")
+                        div(class="carousel-inner" role="listbox")
+                            div(class="carousel-item py-5 active")
+                                div(class="row")
+                                    -for(var x=1 ; x<=4; x++)
+                                        div(class="col-sm-3 content-course")
+                                            div(class="card")
+                                                img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
+                                                div(class="card-body")
+                                                    h5(class="card-title mb-0") courses
+                                                    span(class = 'text') Instructor Name
+                                                    p(class="card-text py-1") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                                    div(class = 'details d-flex justify-content-between')
+                                                        div(class = 'time')
+                                                            span(class = 'fas fa-clock') 
+                                                            span(class = 'ml-2') 45 mins
+                                                        div(class = 'file')
+                                                            span(class = 'fas fa-file-alt') 
+                                                            span(class = 'ml-2') 4 files
+                                                    div(class = 'price mt-1') $75.99
+                                            div(class="more-details py-3")
+                                                div(class="info p-2")
+                                                    h5(class="card-title mb-0") courses
+                                                    span(class = 'text') Instructor Name
+                                                    p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                                    div(class="btns")
+                                                        a(class="link-cart" href="#") Add cart
+                                                        a(class="icon fas fa-heart" href="#")
+                            div(class="carousel-item py-5")
+                                div(class="row")
+                                    -for(var x=1 ; x<=4; x++)
+                                        div(class="content-course col-sm-3")
+                                            div(class="card")
+                                                img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
+                                                div(class="card-body")
+                                                    h5(class="card-title mb-0") courses
+                                                    span(class = 'text') Instructor Name
+                                                    p(class="card-text py-1") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                                    div(class = 'details d-flex justify-content-between')
+                                                        div(class = 'time')
+                                                            span(class = 'fas fa-clock') 
+                                                            span(class = 'ml-2') 45 mins
+                                                        div(class = 'file')
+                                                            span(class = 'fas fa-file-alt') 
+                                                            span(class = 'ml-2') 4 files
+                                                    div(class = 'price mt-1') $75.99
+                                            div(class="more-details py-3")
+                                                div(class="info p-2")
+                                                    h5(class="card-title mb-0") courses
+                                                    span(class = 'text') Instructor Name
+                                                    p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                                    div(class="btns")
+                                                        a(class="link-cart" href="#") Add cart
+                                                        a(class="icon fas fa-heart" href="#")
+                                            
+                //div(class = 'owl-carousel py-3')
                     -for(var x = 1; x <= 5; x++)
                         div(class="content-course")
                             div(class="card")
@@ -36,10 +94,10 @@ section(class = 'all-courses')
                                     div(class="btns")
                                         a(class="link-cart" href="#") Add cart
                                         a(class="icon fas fa-heart" href="#")
-
+                
             div(class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab")
                 h2(class = 'sub-title') Popular
-                div(class = 'owl-carousel py-3')
+                //div(class = 'owl-carousel py-3')
                     -for(var x = 1; x <= 5; x++)
                         div(class="content-course")
                             div(class="card")
@@ -58,7 +116,7 @@ section(class = 'all-courses')
                                     div(class = 'price mt-3') $75.99
             div(class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab")
                 h2(class = 'sub-title') Interactive
-                div(class = 'owl-carousel py-3')
+                //div(class = 'owl-carousel py-3')
                     -for(var x = 1; x <= 5; x++)
                         div(class="content-course")
                             div(class="card")
@@ -75,6 +133,6 @@ section(class = 'all-courses')
                                             span(class = 'fas fa-file-alt') 
                                             span(class = 'ml-2') 4 files
                                     div(class = 'price mt-3') $75.99
-        div(class = 'btn-content')
+        //div(class = 'btn-content')
             a(class = 'btn-link' href = '#') View More
 // End courses 

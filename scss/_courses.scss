@@ -5,17 +5,24 @@
         padding: 0;
         margin: $mainSize 0;
         list-style: none;
-        display: inline-flex;
+        display: flex;
         justify-content: center;
         align-items: center;
         li {
-            display: inline-flex;
-            margin-left: $mainSize / 2;
+            display: inline-block;
+            margin: {
+                left: .5rem;
+                bottom: .5rem;
+            }
             text-transform: capitalize;
             cursor: pointer;
             user-select: none;
             .nav-link {
                 @include btnLink($fourColor, $mainColor);
+                @include mQ(424px) {
+                    font-size: .9rem;
+                    padding: .7rem .5rem;
+                }
                 &.active {
                     background: $fourColor;
                     color: $mainColor;
@@ -27,8 +34,7 @@
     .sub-title {
         @include subTilte();
     }
-    .owl-carousel {
-        
+    .carousel {
         .content-course {
             position: relative;
             cursor: pointer;
@@ -79,8 +85,8 @@
             .more-details {
                 position: absolute;
                 top: 1rem;
-                left: -1rem;
-                transform: translateX(100%);
+                //left: -1rem;
+                transform: translateX(-100%);
                 transform-origin: center;
                 background: #fff;
                 box-shadow: $secShadow;
