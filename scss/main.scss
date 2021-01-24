@@ -194,6 +194,22 @@
 @import 'our-instructors';
 /*End our instructors*/
 
+/*Start mobile app*/
+@import 'mobile-app';
+/*End mobile app*/
+
+/*Start our message*/
+@import 'our-message';
+/*End our message*/
+
+/*Start latest news*/
+@import 'latest-news';
+/*End latest news*/
+
+/*Start video*/
+@import 'video';
+/*End video*/
+
 /*Start faqs*/
 .faqs {
     @include section();
@@ -240,22 +256,6 @@
     }
 }
 /*End faqs*/
-
-/*Start our message*/
-@import 'our-message';
-/*End our message*/
-
-/*Start latest news*/
-@import 'latest-news';
-/*End latest news*/
-
-/*Start video*/
-@import 'video';
-/*End video*/
-
-/*Start mobile app*/
-@import 'mobile-app';
-/*End mobile app*/
 
 /*Start subscribe*/
 @import 'subscribe';

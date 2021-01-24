@@ -38,7 +38,6 @@
     }
     .__carousel {
         position: relative;
-        //min-height: 450px;
         .carousel__button{
             position: absolute;
             top: 50%;
@@ -51,12 +50,15 @@
             border: none;
             outline: none;
             cursor: pointer;
+            z-index: 1000;
             &--left{
                 display: none;
                 left: -3rem;
+                @include mQ(605px){left: -0.8rem;}
             }
             &--right{
                 right: -3rem;
+                @include mQ(605px){right: -0.8rem;}
             }
             i {
                 display: block;
@@ -67,20 +69,12 @@
         .carousel__track--container {
             position: relative;
             overflow: hidden;
-            //height: 450px;
             .carousel__track {
-                
-                //overflow: auto;
-                //margin: 0 auto;
-                //overflow: hidden;
                 display: grid;
                 grid-auto-columns: calc((100% - (4 - 1) * 1rem) / 4);
-                //place-items: center;
-                //grid-auto-columns: max-content;
                 grid-auto-flow: column;
                 gap: 1rem;
                 position: relative;
-                //height: 100%;
                 @include mQ(991px){
                     grid-auto-columns: calc((100% - (2 - 1) * 1rem) / 2);
                 }
@@ -137,10 +131,6 @@
                     .more-details {
                         position: absolute;
                         top: 1rem;
-                        //right: -0.5rem;
-                        //transform: translateX(100%);
-                        //left: -0.5rem;
-                        //transform: translateX(-100%);
                         transform-origin: center;
                         background: #fff;
                         box-shadow: $secShadow;
@@ -177,6 +167,7 @@
                                 }
                             }
                         }
+                        @include mQ(767px){display: none;}
                     }
                         
                     

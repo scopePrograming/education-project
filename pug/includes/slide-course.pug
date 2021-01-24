@@ -7,39 +7,107 @@ section(class = 'slide-courses')
                 a(class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false") Popular
             li(class="nav-item" role="presentation")
                 a(class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false") Interactive
-                div(class="tab-content" id="pills-tabContent")
-        div(class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab")
-            h2(class = 'sub-title') Courses
-            div(class="__carousel")
-                button(class="carousel__button carousel__button--left")
-                    i(class="fas fa-angle-left")
-                div(class="carousel__track--container")
-                    div(class="carousel__track")
-                        -for(var x=1 ; x<=8; x++)
-                            div(class="carousel__slide")
-                                div(class="card")
-                                    img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
-                                    div(class="card-body")
-                                        h5(class="card-title mb-0") courses #{x}
-                                        span(class = 'text') Instructor Name
-                                        p(class="card-text py-1") Some quick example text to build on the card title and make up the bulk of the card's content.
-                                        div(class = 'details d-flex justify-content-between')
-                                            div(class = 'time')
-                                                span(class = 'fas fa-clock') 
-                                                span(class = 'ml-2') 45 mins
-                                            div(class = 'file')
-                                                span(class = 'fas fa-file-alt') 
-                                                span(class = 'ml-2') 4 files
-                                        div(class = 'price mt-1') $75.99
-                                div(class="more-details py-3")
-                                    div(class="info p-2")
-                                        h5(class="card-title mb-0") courses
-                                        span(class = 'text') Instructor Name
-                                        p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
-                                        div(class="btns")
-                                            a(class="link-cart" href="#") Add cart
-                                            a(class="icon fas fa-heart" href="#")
-                button(class="carousel__button carousel__button--right")
-                    i(class="fas fa-angle-right")            
+                
+        div(class="tab-content" id="pills-tabContent")
+            div(class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab")
+                h2(class = 'sub-title') Courses
+                div(class="__carousel")
+                    button(class="carousel__button carousel__button--left")
+                        i(class="fas fa-angle-left")
+                    div(class="carousel__track--container")
+                        div(class="carousel__track")
+                            -for(var x=1 ; x<=8; x++)
+                                div(class="carousel__slide")
+                                    div(class="card")
+                                        img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
+                                        div(class="card-body")
+                                            h5(class="card-title mb-0") courses #{x}
+                                            span(class = 'text') Instructor Name
+                                            p(class="card-text py-1") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            div(class = 'details d-flex justify-content-between')
+                                                div(class = 'time')
+                                                    span(class = 'fas fa-clock') 
+                                                    span(class = 'ml-2') 45 mins
+                                                div(class = 'file')
+                                                    span(class = 'fas fa-file-alt') 
+                                                    span(class = 'ml-2') 4 files
+                                            div(class = 'price mt-1') $75.99
+                                    div(class="more-details py-3")
+                                        div(class="info p-2")
+                                            h5(class="card-title mb-0") courses
+                                            span(class = 'text') Instructor Name
+                                            p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            div(class="btns")
+                                                a(class="link-cart" href="#") Add cart
+                                                a(class="icon fas fa-heart" href="#")
+                    button(class="carousel__button carousel__button--right carousel__button--one")
+                        i(class="fas fa-angle-right")            
+            div(class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab")
+                h2(class = 'sub-title') popular
+                div(class="__carousel")
+                    button(class="carousel__button carousel__button--left")
+                        i(class="fas fa-angle-left")
+                    div(class="carousel__track--container")
+                        div(class="carousel__track")
+                            -for(var x=1 ; x<=8; x++)
+                                div(class="carousel__slide")
+                                    div(class="card")
+                                        img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
+                                        div(class="card-body")
+                                            h5(class="card-title mb-0") popular #{x}
+                                            span(class = 'text') Instructor Name
+                                            p(class="card-text py-1") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            div(class = 'details d-flex justify-content-between')
+                                                div(class = 'time')
+                                                    span(class = 'fas fa-clock') 
+                                                    span(class = 'ml-2') 45 mins
+                                                div(class = 'file')
+                                                    span(class = 'fas fa-file-alt') 
+                                                    span(class = 'ml-2') 4 files
+                                            div(class = 'price mt-1') $75.99
+                                    div(class="more-details py-3")
+                                        div(class="info p-2")
+                                            h5(class="card-title mb-0") popular
+                                            span(class = 'text') Instructor Name
+                                            p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            div(class="btns")
+                                                a(class="link-cart" href="#") Add cart
+                                                a(class="icon fas fa-heart" href="#")
+                    button(class="carousel__button carousel__button--right carousel__button--two")
+                        i(class="fas fa-angle-right")            
+            div(class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab")
+                h2(class = 'sub-title') interactive
+                div(class="__carousel")
+                    button(class="carousel__button carousel__button--left")
+                        i(class="fas fa-angle-left")
+                    div(class="carousel__track--container")
+                        div(class="carousel__track")
+                            -for(var x=1 ; x<=8; x++)
+                                div(class="carousel__slide")
+                                    div(class="card")
+                                        img(src=`./assets/images/pic${x}.svg` class="card-img-top" alt="image" '')/
+                                        div(class="card-body")
+                                            h5(class="card-title mb-0") interactive #{x}
+                                            span(class = 'text') Instructor Name
+                                            p(class="card-text py-1") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            div(class = 'details d-flex justify-content-between')
+                                                div(class = 'time')
+                                                    span(class = 'fas fa-clock') 
+                                                    span(class = 'ml-2') 45 mins
+                                                div(class = 'file')
+                                                    span(class = 'fas fa-file-alt') 
+                                                    span(class = 'ml-2') 4 files
+                                            div(class = 'price mt-1') $75.99
+                                    div(class="more-details py-3")
+                                        div(class="info p-2")
+                                            h5(class="card-title mb-0") interactive
+                                            span(class = 'text') Instructor Name
+                                            p(class="card-text py-2") Some quick example text to build on the card title and make up the bulk of the card's content.
+                                            div(class="btns")
+                                                a(class="link-cart" href="#") Add cart
+                                                a(class="icon fas fa-heart" href="#")
+                    button(class="carousel__button carousel__button--right carousel__button--three")
+                        i(class="fas fa-angle-right")            
+        
         div(class = 'btn-content')
             a(class = 'btn-link' href = '#') View More

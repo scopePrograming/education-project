@@ -70,69 +70,83 @@ $(document).ready(function(){
 });
 
 // Slide courses
-const carouselTrack = document.querySelector('.carousel__track');
-const slides = Array.from(carouselTrack.children);
-const nextBtn = document.querySelector('.carousel__button--right');
-const prevBtn = document.querySelector('.carousel__button--left');
+const listCourses = document.querySelector('.list-courses'); // content Btns type courses 
+const listBtns = Array.from(listCourses.children);
 
-// console.log(slides[0].getBoundingClientRect());
-const sizeGap = parseInt(window.getComputedStyle(carouselTrack).getPropertyValue('gap'));
-const slideWidth = slides[0].getBoundingClientRect().width+sizeGap;
-slides[0].classList.add('active');
+const tabContent = document.querySelector('.tab-content');
+const tabPanes = Array.from(tabContent.children);
 
-const contentCourse = document.querySelectorAll('.slide-courses .carousel__slide--item');
-const cardCourses = document.querySelectorAll('.slide-courses .card');
-const moreDetails = document.querySelectorAll('.slide-courses .more-details');
+const carouselTrack = document.querySelectorAll('.carousel__track');
+   
+window.onload = changeCourses();
 
+function changeCourses() {    
+    tabPanes.forEach((tabPan, index) => {
+        const nextBtn = tabPan.querySelector('.carousel__button--right');
+        const prevBtn = tabPan.querySelector('.carousel__button--left');
 
-cardCourses.forEach(card => {
-    card.addEventListener('mouseover', () => {
-        //console.log(card.parentElement.getBoundingClientRect());
-        if(card.parentElement.classList.contains('active')) {
-            moreDetails.forEach(details => {
-                if(details.parentElement === card.parentElement) {
-                    details.style.transform = 'translateX(100%)';
-                    details.style.right = '-0.5rem';
-                    details.style.left = 'auto';
-                }
-            }) 
-        }else {  
-            moreDetails.forEach(details => {
-                if(details.parentElement === card.parentElement) {
-                    details.style.transform = 'translateX(-100%)';
-                    details.style.left = '-0.5rem';
-                    details.style.right = 'auto';
+        carouselTrack.forEach((track,ind) => {
+            const slides = Array.from(carouselTrack[ind].children);
+            slides[0].classList.add('active');
+            const cardCourses = track.querySelectorAll('.slide-courses .card');
+            const moreDetails = track.querySelectorAll('.slide-courses .more-details');
+
+            cardCourses.forEach(card => {
+                card.addEventListener('mouseover', () => {
+                    if(card.parentElement.classList.contains('active')) {
+                        moreDetails.forEach(details => {
+                            if(details.parentElement === card.parentElement) {
+                                details.style.transform = 'translateX(100%)';
+                                details.style.right = '-0.5rem';
+                                details.style.left = 'auto';
+                            }
+                        }) 
+                    }else {  
+                        moreDetails.forEach(details => {
+                            if(details.parentElement === card.parentElement) {
+                                details.style.transform = 'translateX(-100%)';
+                                details.style.left = '-0.5rem';
+                                details.style.right = 'auto';
+                                
+                            }
+                        }) 
+                    }
+                })
+            });
+            if(index===ind){
+                nextBtn.addEventListener('click', () => {
+                    const sizeGap = parseInt(window.getComputedStyle(track).getPropertyValue('gap'));
+                    const slideWidth = slides[0].getBoundingClientRect().width + sizeGap;
+                    const currentSlide = carouselTrack[ind].querySelector('.active');
+                    const nextSlide = currentSlide.nextElementSibling;
+                    currentSlide.classList.remove('active');
+                    nextSlide.classList.add('active');
                     
-                }
-            }) 
-        }
-    })
-})
-
-nextBtn.addEventListener('click', () => {
-    const currentSlide = carouselTrack.querySelector('.active');
-    const nextSlide = currentSlide.nextElementSibling;
-    currentSlide.classList.remove('active');
-    nextSlide.classList.add('active');
-    //nextSlide.style.left = 'slideWidth';
-    carouselTrack.style.transform = `translateX(-${slideWidth * slides.indexOf(nextSlide)}px)`;
-    prevBtn.style.display = 'block';
-    if(slides.indexOf(nextSlide) >= slides.length-1){
-        nextBtn.style.display = 'none';
-    }
-});
-
-prevBtn.addEventListener('click', () => {
-    const currentSlide = carouselTrack.querySelector('.active');
-    const prevSlide = currentSlide.previousElementSibling;
-    currentSlide.classList.remove('active');
-    prevSlide.classList.add('active');
-    carouselTrack.style.transform = `translateX(-${slideWidth * slides.indexOf(prevSlide)}px)`;
-    nextBtn.style.display = 'block';
-    if(slides.indexOf(prevSlide) == 0){
-        prevBtn.style.display = 'none';
-    }
-});    
+                    carouselTrack[ind].style.transform = `translateX(-${slideWidth * slides.indexOf(nextSlide)}px)`;
+                    prevBtn.style.display = 'block';
+                    if(slides.indexOf(nextSlide) >= slides.length-1){
+                        nextBtn.style.display = 'none';
+                    }
+                });
+                
+                prevBtn.addEventListener('click', (e) => {
+                    const sizeGap = parseInt(window.getComputedStyle(track).getPropertyValue('gap'));
+                    const slideWidth = slides[0].getBoundingClientRect().width + sizeGap;
+                    const currentSlide = carouselTrack[ind].querySelector('.active');
+                    const prevSlide = currentSlide.previousElementSibling;
+                    currentSlide.classList.remove('active');
+                    prevSlide.classList.add('active');
+                    carouselTrack[ind].style.transform = `translateX(-${slideWidth * slides.indexOf(prevSlide)}px)`;
+                    nextBtn.style.display = 'block';
+                    if(slides.indexOf(prevSlide) == 0){
+                        prevBtn.style.display = 'none';
+                    }
+                });
+            }
+        })
+        
+    });
+};
 
 // Change accordion icon 
 const accordion = document.querySelectorAll('.card-header');
@@ -148,46 +162,9 @@ accordion.forEach(accord => {
         
     });
 });
-// carousel delay
-/*$('header .carousel').carousel ({
-    interval: 6000
-});*/
 
 // Aos animation
 AOS.init();
-
-// Owl carousel (all courses)
-/*$('.all-courses .owl-carousel').owlCarousel({
-    loop:true,
-    margin:15,
-    responsiveClass:true,
-    autoplay:false,
-    dots:true,
-    dotsEach:true,
-    dotsData:false,
-    responsive:{
-        0:{
-            items:1,
-            dots:false,
-            nav:false
-        },
-        600:{
-            items:2,
-            dots:true,
-            nav:true
-        },
-        1000:{
-            items:4,
-            nav:true,
-            dots:true,
-            loop:true
-        }
-    }
-});*/
-
-
-
-
 
 // Owl carousel (our instructor)
 $('.our-instructors .owl-carousel').owlCarousel({
@@ -239,20 +216,3 @@ $(".nicescroll-box").niceScroll(".wrap",
     }
 );
 
-// Wavify 
-/*
-var myWave1 = $('#wave1').wavify({
-    height: 20,
-    bones: 6,
-    amplitude: 30,
-    color: 'rgba(235, 76, 110, .8)',
-    speed: .20
-});
-
-var myWave2 = $('#wave2').wavify({
-    height: 20,
-    bones: 7,
-    amplitude: 30,
-    color: 'rgba(235, 76, 110, .8)',
-    speed: .35
-});*/

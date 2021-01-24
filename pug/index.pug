@@ -30,8 +30,6 @@ html(lang = 'en')
             //-+enrolled
             //- Start enrolled students 
 
-            include ./includes/enrolled
-
             include ./includes/slide-course
             
             //-include ./includes/courses
@@ -52,9 +50,7 @@ html(lang = 'en')
 
             include ./includes/our-instructors
 
-            // Start faqs 
-            +faqs('FAQs')
-            // End faqs
+            include ./includes/mobile-app
             
             include ./includes/our-message
 
@@ -62,7 +58,9 @@ html(lang = 'en')
 
             include ./includes/video
 
-            include ./includes/mobile-app
+            // Start faqs 
+            +faqs('FAQs')
+            // End faqs
 
             include ./includes/subscribe
 

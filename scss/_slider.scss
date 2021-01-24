@@ -107,7 +107,7 @@
 
 .carousel-control-next {
     @extend %controlSlide;
-    right: -76%;
+    right: 0;
 }
 
 .carousel-control-next-icon {
@@ -120,7 +120,7 @@
 }
 
 .carousel-indicators {
-    right: -100%;
+    right: -74%;
     bottom: -3rem;
     left: 0;
     

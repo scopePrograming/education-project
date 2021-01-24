@@ -40,4 +40,19 @@ section(class="slider-content" id='slider-header')
                 //- image
                 div(class = 'slide-img')
                     img(class = '' src="./assets/images/pic3.svg" class="d-block" alt="" '')/
+        
+        // Start enrolled 
+        div(class = 'enrolled')
+            .container
+                div(class="row text-center")
+                    - let contents = { 724 : 'fas fa-history', 508 : 'fas fa-gift', 420 : 'fas fa-users', 130 : 'fas fa-award'}
+                        each icon, number in contents
+                            div(class = 'col-lg-3 col-md-6 my-3')
+                                div(class="box")
+                                    div(class="icon")
+                                        i(class = `${icon}`)
+                                    div(class="counter")= `${number}` 
+                                    div(class="text") enrolled student
+                    
+        // End enrolled
 //-End slider 
